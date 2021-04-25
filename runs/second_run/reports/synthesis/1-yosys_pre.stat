@@ -1,0 +1,40 @@
+
+10. Printing statistics.
+
+=== digital_pll ===
+
+   Number of wires:                591
+   Number of wire bits:            671
+   Number of public wires:         101
+   Number of public wire bits:     175
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                650
+     $_ANDNOT_                      90
+     $_AND_                          5
+     $_DFFE_PP0N_                    8
+     $_DFFE_PP0P_                   12
+     $_DFF_PP0_                      3
+     $_MUX_                         31
+     $_NAND_                        16
+     $_NOR_                         11
+     $_NOT_                          7
+     $_ORNOT_                       11
+     $_OR_                         323
+     $_XNOR_                        12
+     $_XOR_                         19
+     sky130_fd_sc_hd__clkbuf_1      13
+     sky130_fd_sc_hd__clkbuf_2      12
+     sky130_fd_sc_hd__clkinv_1      13
+     sky130_fd_sc_hd__clkinv_2       2
+     sky130_fd_sc_hd__clkinv_8       2
+     sky130_fd_sc_hd__conb_1         1
+     sky130_fd_sc_hd__dfrbp_1        4
+     sky130_fd_sc_hd__einvn_4       13
+     sky130_fd_sc_hd__einvn_8       13
+     sky130_fd_sc_hd__einvp_1        1
+     sky130_fd_sc_hd__einvp_2       26
+     sky130_fd_sc_hd__inv_4          1
+     sky130_fd_sc_hd__or2_2          1
+
