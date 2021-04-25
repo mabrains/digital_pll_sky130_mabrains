@@ -34,6 +34,11 @@ prep -design digital_pll -tag first_run
 
 ![Screenshot from 2021-04-25 01-21-54](https://user-images.githubusercontent.com/36249257/115981234-a2cbb700-a592-11eb-9ef2-b811343c79f6.png)
 
+**DRC Checks:** I got 14461 drc errors.
+
+
+![Screenshot from 2021-04-25 06-55-47](https://user-images.githubusercontent.com/36249257/115981607-4027ea80-a595-11eb-93bb-a93d26452c0d.png)
+
 
 
 
