@@ -1,4 +1,4 @@
-# digital_pll_sky130_mabrains
+# Skywaters Digital PLL
 
 **Design Prepration:**
 
