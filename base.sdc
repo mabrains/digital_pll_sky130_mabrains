@@ -1,25 +1,10 @@
 set ::env(SYNTH_MAX_FANOUT) 6
-#set ::env(CLOCK_PERIOD) "10"
-#set ::env(CLOCK_PORT) "sys_clk"
-set ::env(IO_PCT) 0.1
-
-
-set ::env(SYNTH_READ_BLACKBOX_LIB) 1
-
-# Fill this
-#set ::env(CLOCK_PERIOD) "100000"
+set ::env(CLOCK_PERIOD) "25"
 set ::env(CLOCK_PORT) "w"
-set ::env(CLOCK_TREE_SYNTH) 0
-
-set ::env(RUN_SIMPLE_CTS) 0
-set ::env(SYNTH_BUFFERING) 0
-set ::env(SYNTH_SIZING) 0
-
-
-set ::env(FP_CORE_UTIL) 49
-set ::env(PL_TARGET_DENSITY) [ expr ($::env(FP_CORE_UTIL)+5) / 100.0 ]
-set ::env(CLOCK_PERIOD) "15.8"
-set ::env(CELL_PAD) 4
+#set ::env(SYNTH_DRIVING_CELL) "sky130_fd_sc_hd__buf_8"
+#set ::env(SYNTH_DRIVING_CELL_PIN) X
+set ::env(IO_PCT) 0.2
+set ::env(SYNTH_CAP_LOAD) 6.5810000
 
 
 create_clock [get_ports $::env(CLOCK_PORT)]  -name $::env(CLOCK_PORT)  -period $::env(CLOCK_PERIOD)

@@ -14,7 +14,7 @@ set ::env(CLK_BUFFER) "sky130_fd_sc_hd__clkbuf_4"
 set ::env(CLK_BUFFER_INPUT) "A"
 set ::env(CLK_BUFFER_OUTPUT) "X"
 set ::env(CLOCK_BUFFER_FANOUT) "16"
-set ::env(CLOCK_PERIOD) "15.8"
+set ::env(CLOCK_PERIOD) "25"
 set ::env(CLOCK_PORT) "w"
 set ::env(CLOCK_TREE_SYNTH) "0"
 set ::env(CONFIGS) "/openLANE_flow/configuration/placement.tcl /openLANE_flow/configuration/cts.tcl /openLANE_flow/configuration/floorplan.tcl /openLANE_flow/configuration/general.tcl /openLANE_flow/configuration/synthesis.tcl /openLANE_flow/configuration/routing.tcl /openLANE_flow/configuration/checkers.tcl /openLANE_flow/configuration/lvs.tcl"
@@ -232,7 +232,7 @@ set ::env(TRISTATE_BUFFER_MAP) "/home/mariam/openlane/pdks/sky130A/libs.tech/ope
 set ::env(USE_ARC_ANTENNA_CHECK) "1"
 set ::env(USE_GPIO_PADS) "0"
 set ::env(VDD_PIN) "VPWR"
-set ::env(VERILOG_FILES) "./designs/digital_pll_sky130_fd_sc_hd/src/digital_pll.v"
+set ::env(VERILOG_FILES) "./designs/digital_pll/src/digital_pll.v"
 set ::env(WIDEN_SITE) "1"
 set ::env(WIDEN_SITE_IS_FACTOR) "1"
 set ::env(WIRE_RC_LAYER) "met1"
@@ -248,7 +248,7 @@ set ::env(cvc_log_file_tag) "/openLANE_flow/designs/digital_pll/runs/first_run/l
 set ::env(cvc_report_file_tag) "/openLANE_flow/designs/digital_pll/runs/first_run/reports/cvc/cvc"
 set ::env(cvc_result_file_tag) "/openLANE_flow/designs/digital_pll/runs/first_run/results/cvc/digital_pll"
 set ::env(cvc_tmp_file_tag) "/openLANE_flow/designs/digital_pll/runs/first_run/tmp/cvc/cvc"
-set ::env(datetime) "24-04_23-05"
+set ::env(datetime) "26-04_14-19"
 set ::env(fastroute_log_file_tag) "/openLANE_flow/designs/digital_pll/runs/first_run/logs/routing/fastroute"
 set ::env(fastroute_report_file_tag) "/openLANE_flow/designs/digital_pll/runs/first_run/reports/routing/fastroute"
 set ::env(fastroute_tmp_file_tag) "/openLANE_flow/designs/digital_pll/runs/first_run/tmp/routing/fastroute"
@@ -301,9 +301,9 @@ set ::env(yosys_log_file_tag) "/openLANE_flow/designs/digital_pll/runs/first_run
 set ::env(yosys_report_file_tag) "/openLANE_flow/designs/digital_pll/runs/first_run/reports/synthesis/yosys"
 set ::env(yosys_result_file_tag) "/openLANE_flow/designs/digital_pll/runs/first_run/results/synthesis/digital_pll.synthesis"
 set ::env(yosys_tmp_file_tag) "/openLANE_flow/designs/digital_pll/runs/first_run/tmp/synthesis/yosys"
-set ::env(SYNTH_MAX_TRAN) "1.58"
+set ::env(SYNTH_MAX_TRAN) "2.5"
 set ::env(CURRENT_DEF) /openLANE_flow/designs/digital_pll/runs/first_run/results/routing/digital_pll.def
 set ::env(CURRENT_GUIDE) /openLANE_flow/designs/digital_pll/runs/first_run/tmp/routing/14-fastroute.guide
-set ::env(CURRENT_INDEX) 20
-set ::env(CURRENT_NETLIST) /openLANE_flow/designs/digital_pll/runs/first_run/results/synthesis/digital_pll.synthesis_preroute.v
-set ::env(PREV_NETLIST) /openLANE_flow/designs/digital_pll/runs/first_run/results/synthesis/digital_pll.synthesis_optimized.v
+set ::env(CURRENT_INDEX) 35
+set ::env(CURRENT_NETLIST) /openLANE_flow/designs/digital_pll/runs/first_run/results/lvs/digital_pll.lvs.powered.v
+set ::env(PREV_NETLIST) /openLANE_flow/designs/digital_pll/runs/first_run/results/synthesis/digital_pll.synthesis_preroute.v

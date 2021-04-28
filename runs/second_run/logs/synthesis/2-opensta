@@ -11,9 +11,9 @@ Warning: base.sdc line 1, port 'w' not found.
 set input_delay_value [expr $::env(CLOCK_PERIOD) * $::env(IO_PCT)]
 set output_delay_value [expr $::env(CLOCK_PERIOD) * $::env(IO_PCT)]
 puts "\[INFO\]: Setting output delay to: $output_delay_value"
-[INFO]: Setting output delay to: 3.16
+[INFO]: Setting output delay to: 5.0
 puts "\[INFO\]: Setting input delay to: $input_delay_value"
-[INFO]: Setting input delay to: 3.16
+[INFO]: Setting input delay to: 5.0
 set_max_fanout $::env(SYNTH_MAX_FANOUT) [current_design]
 set clk_indx [lsearch [all_inputs] [get_port $::env(CLOCK_PORT)]]
 Warning: base.sdc line 9, port 'w' not found.
@@ -31,5 +31,5 @@ set cap_load [expr $::env(SYNTH_CAP_LOAD) / 1000.0]
 puts "\[INFO\]: Setting load to: $cap_load"
 [INFO]: Setting load to: 0.01765
 set_load  $cap_load [all_outputs]
-tns -8.49
-wns -4.49
+tns 0.00
+wns 0.00

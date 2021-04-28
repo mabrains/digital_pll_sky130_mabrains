@@ -10,8 +10,8 @@ Notice 0:
 Reading DEF file: /openLANE_flow/designs/digital_pll/runs/second_run/tmp/routing/15-fastroute.def
 Notice 0: Design: digital_pll
 Notice 0:     Created 47 pins.
-Notice 0:     Created 537 components and 3139 component-terminals.
+Notice 0:     Created 547 components and 3167 component-terminals.
 Notice 0:     Created 2 special nets and 0 connections.
 Notice 0:     Created 391 nets and 1188 connections.
 Notice 0: Finished DEF file: /openLANE_flow/designs/digital_pll/runs/second_run/tmp/routing/15-fastroute.def
-[INFO DPL-0001] Placed 659 filler instances.
+[INFO DPL-0001] Placed 718 filler instances.

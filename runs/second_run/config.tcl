@@ -14,7 +14,7 @@ set ::env(CLK_BUFFER) "sky130_fd_sc_hd__clkbuf_4"
 set ::env(CLK_BUFFER_INPUT) "A"
 set ::env(CLK_BUFFER_OUTPUT) "X"
 set ::env(CLOCK_BUFFER_FANOUT) "16"
-set ::env(CLOCK_PERIOD) "15.8"
+set ::env(CLOCK_PERIOD) "25"
 set ::env(CLOCK_PORT) "w"
 set ::env(CLOCK_TREE_SYNTH) "0"
 set ::env(CONFIGS) "/openLANE_flow/configuration/placement.tcl /openLANE_flow/configuration/cts.tcl /openLANE_flow/configuration/floorplan.tcl /openLANE_flow/configuration/general.tcl /openLANE_flow/configuration/synthesis.tcl /openLANE_flow/configuration/routing.tcl /openLANE_flow/configuration/checkers.tcl /openLANE_flow/configuration/lvs.tcl"
@@ -46,7 +46,7 @@ set ::env(FILL_CELL) "sky130_fd_sc_hd__fill_"
 set ::env(FILL_INSERTION) "1"
 set ::env(FP_ASPECT_RATIO) "1"
 set ::env(FP_CORE_MARGIN) "0"
-set ::env(FP_CORE_UTIL) "45"
+set ::env(FP_CORE_UTIL) "40"
 set ::env(FP_ENDCAP_CELL) "sky130_fd_sc_hd__decap_3"
 set ::env(FP_HORIZONTAL_HALO) "10"
 set ::env(FP_IO_HEXTEND) "-1"
@@ -168,7 +168,7 @@ set ::env(PL_RESIZER_MAX_WIRE_LENGTH) "0"
 set ::env(PL_RESIZER_TIMING_OPTIMIZATIONS) "1"
 set ::env(PL_ROUTABILITY_DRIVEN) "0"
 set ::env(PL_SKIP_INITIAL_PLACEMENT) "0"
-set ::env(PL_TARGET_DENSITY) "0.5"
+set ::env(PL_TARGET_DENSITY) "0.45"
 set ::env(PL_TIME_DRIVEN) "0"
 set ::env(PROCESS) "130"
 set ::env(PSN_ENABLE_PIN_SWAP) "1"
@@ -232,7 +232,7 @@ set ::env(TRISTATE_BUFFER_MAP) "/home/mariam/openlane/pdks/sky130A/libs.tech/ope
 set ::env(USE_ARC_ANTENNA_CHECK) "1"
 set ::env(USE_GPIO_PADS) "0"
 set ::env(VDD_PIN) "VPWR"
-set ::env(VERILOG_FILES) "./designs/digital_pll_sky130_fd_sc_hd/src/digital_pll.v"
+set ::env(VERILOG_FILES) "./designs/digital_pll/src/digital_pll.v"
 set ::env(WIDEN_SITE) "1"
 set ::env(WIDEN_SITE_IS_FACTOR) "1"
 set ::env(WIRE_RC_LAYER) "met1"
@@ -248,7 +248,7 @@ set ::env(cvc_log_file_tag) "/openLANE_flow/designs/digital_pll/runs/second_run/
 set ::env(cvc_report_file_tag) "/openLANE_flow/designs/digital_pll/runs/second_run/reports/cvc/cvc"
 set ::env(cvc_result_file_tag) "/openLANE_flow/designs/digital_pll/runs/second_run/results/cvc/digital_pll"
 set ::env(cvc_tmp_file_tag) "/openLANE_flow/designs/digital_pll/runs/second_run/tmp/cvc/cvc"
-set ::env(datetime) "25-04_03-39"
+set ::env(datetime) "27-04_00-06"
 set ::env(fastroute_log_file_tag) "/openLANE_flow/designs/digital_pll/runs/second_run/logs/routing/fastroute"
 set ::env(fastroute_report_file_tag) "/openLANE_flow/designs/digital_pll/runs/second_run/reports/routing/fastroute"
 set ::env(fastroute_tmp_file_tag) "/openLANE_flow/designs/digital_pll/runs/second_run/tmp/routing/fastroute"
@@ -301,9 +301,9 @@ set ::env(yosys_log_file_tag) "/openLANE_flow/designs/digital_pll/runs/second_ru
 set ::env(yosys_report_file_tag) "/openLANE_flow/designs/digital_pll/runs/second_run/reports/synthesis/yosys"
 set ::env(yosys_result_file_tag) "/openLANE_flow/designs/digital_pll/runs/second_run/results/synthesis/digital_pll.synthesis"
 set ::env(yosys_tmp_file_tag) "/openLANE_flow/designs/digital_pll/runs/second_run/tmp/synthesis/yosys"
-set ::env(SYNTH_MAX_TRAN) "1.58"
+set ::env(SYNTH_MAX_TRAN) "2.5"
 set ::env(CURRENT_DEF) /openLANE_flow/designs/digital_pll/runs/second_run/results/routing/digital_pll.def
 set ::env(CURRENT_GUIDE) /openLANE_flow/designs/digital_pll/runs/second_run/tmp/routing/15-fastroute.guide
-set ::env(CURRENT_INDEX) 21
-set ::env(CURRENT_NETLIST) /openLANE_flow/designs/digital_pll/runs/second_run/results/synthesis/digital_pll.synthesis_preroute.v
-set ::env(PREV_NETLIST) /openLANE_flow/designs/digital_pll/runs/second_run/results/synthesis/digital_pll.synthesis_optimized.v
+set ::env(CURRENT_INDEX) 34
+set ::env(CURRENT_NETLIST) /openLANE_flow/designs/digital_pll/runs/second_run/results/lvs/digital_pll.lvs.powered.v
+set ::env(PREV_NETLIST) /openLANE_flow/designs/digital_pll/runs/second_run/results/synthesis/digital_pll.synthesis_preroute.v

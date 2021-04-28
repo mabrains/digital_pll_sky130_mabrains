@@ -1,0 +1,6 @@
+<< properties >>
+string FIXED_BBOX 0 0 22979 25123
+string GDS_FILE /openLANE_flow/designs/digital_pll/runs/sixth_run/results/magic/digital_pll.gds
+string GDS_END 1432978
+string GDS_START 523516
+<< end >>

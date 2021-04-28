@@ -1,0 +1,1649 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+3621 (git sha1 84e9fa7, gcc 8.3.1 -fPIC -Os)
+
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+Reading /openLANE_flow/designs/digital_pll/runs/fifth_run/tmp/sky130_fd_sc_hd__tt_025C_1v80.no_pg.lib as a blackbox
+
+1. Executing Liberty frontend.
+Imported 428 cell types from liberty file.
+
+2. Executing Verilog-2005 frontend: ./designs/digital_pll/src/digital_pll.v
+Parsing SystemVerilog input from `./designs/digital_pll/src/digital_pll.v' to AST representation.
+Generating RTLIL representation for module `\digital_pll_controller'.
+Generating RTLIL representation for module `\delay_stage'.
+./designs/digital_pll/src/ring_osc2x13.v:29: Warning: Identifier `\ts' is implicitly declared.
+Generating RTLIL representation for module `\start_stage'.
+Generating RTLIL representation for module `\ring_osc2x13'.
+Generating RTLIL representation for module `\digital_pll'.
+Successfully finished Verilog frontend.
+
+3. Generating Graphviz representation of design.
+Writing dot description to `/openLANE_flow/designs/digital_pll/runs/fifth_run/tmp/synthesis/hierarchy.dot'.
+Dumping module digital_pll to page 1.
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1. Analyzing design hierarchy..
+Top module:  \digital_pll
+Used module:     \digital_pll_controller
+Used module:     \ring_osc2x13
+Used module:         \delay_stage
+Used module:         \start_stage
+
+4.2. Analyzing design hierarchy..
+Top module:  \digital_pll
+Used module:     \digital_pll_controller
+Used module:     \ring_osc2x13
+Used module:         \delay_stage
+Used module:         \start_stage
+Removed 0 unused modules.
+
+5. Executing TRIBUF pass.
+
+6. Executing SYNTH pass.
+
+6.1. Executing HIERARCHY pass (managing design hierarchy).
+
+6.1.1. Analyzing design hierarchy..
+Top module:  \digital_pll
+Used module:     \digital_pll_controller
+Used module:     \ring_osc2x13
+Used module:         \delay_stage
+Used module:         \start_stage
+
+6.1.2. Analyzing design hierarchy..
+Top module:  \digital_pll
+Used module:     \digital_pll_controller
+Used module:     \ring_osc2x13
+Used module:         \delay_stage
+Used module:         \start_stage
+Removed 0 unused modules.
+
+6.2. Executing PROC pass (convert processes to netlists).
+
+6.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+6.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 3 switch rules as full_case in process $proc$./designs/digital_pll/src/digital_pll_controller.v:98$54 in module digital_pll_controller.
+Removed a total of 0 dead cases.
+
+6.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 0 assignments to connections.
+
+6.2.4. Executing PROC_INIT pass (extract init attributes).
+
+6.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \reset in `\digital_pll_controller.$proc$./designs/digital_pll/src/digital_pll_controller.v:98$54'.
+
+6.2.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\digital_pll_controller.$proc$./designs/digital_pll/src/digital_pll_controller.v:98$54'.
+     1/5: $0\oscbuf[2:0]
+     2/5: $0\tval[6:0]
+     3/5: $0\count1[4:0]
+     4/5: $0\count0[4:0]
+     5/5: $0\prep[2:0]
+
+6.2.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+6.2.8. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\digital_pll_controller.\oscbuf' using process `\digital_pll_controller.$proc$./designs/digital_pll/src/digital_pll_controller.v:98$54'.
+  created $adff cell `$procdff$98' with positive edge clock and positive level reset.
+Creating register for signal `\digital_pll_controller.\prep' using process `\digital_pll_controller.$proc$./designs/digital_pll/src/digital_pll_controller.v:98$54'.
+  created $adff cell `$procdff$99' with positive edge clock and positive level reset.
+Creating register for signal `\digital_pll_controller.\count0' using process `\digital_pll_controller.$proc$./designs/digital_pll/src/digital_pll_controller.v:98$54'.
+  created $adff cell `$procdff$100' with positive edge clock and positive level reset.
+Creating register for signal `\digital_pll_controller.\count1' using process `\digital_pll_controller.$proc$./designs/digital_pll/src/digital_pll_controller.v:98$54'.
+  created $adff cell `$procdff$101' with positive edge clock and positive level reset.
+Creating register for signal `\digital_pll_controller.\tval' using process `\digital_pll_controller.$proc$./designs/digital_pll/src/digital_pll_controller.v:98$54'.
+  created $adff cell `$procdff$102' with positive edge clock and positive level reset.
+
+6.2.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 5 empty switches in `\digital_pll_controller.$proc$./designs/digital_pll/src/digital_pll_controller.v:98$54'.
+Removing empty process `digital_pll_controller.$proc$./designs/digital_pll/src/digital_pll_controller.v:98$54'.
+Cleaned up 5 empty switches.
+
+6.3. Executing FLATTEN pass (flatten design).
+Deleting now unused module ring_osc2x13.
+Deleting now unused module start_stage.
+Deleting now unused module delay_stage.
+Deleting now unused module digital_pll_controller.
+<suppressed ~15 debug messages>
+
+6.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module digital_pll.
+<suppressed ~7 debug messages>
+
+6.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \digital_pll..
+Removed 2 unused cells and 22 unused wires.
+<suppressed ~3 debug messages>
+
+6.6. Executing CHECK pass (checking for obvious problems).
+checking module digital_pll..
+Warning: multiple conflicting drivers for digital_pll.\ringosc.iss.d1:
+    port Z[0] of cell ringosc.iss.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.iss.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[0].id.in:
+    port Z[0] of cell ringosc.iss.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.iss.delayenb0 (sky130_fd_sc_hd__einvn_8)
+    port Z[0] of cell ringosc.iss.reseten0 (sky130_fd_sc_hd__einvp_1)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[9].id.d1:
+    port Z[0] of cell ringosc.dstage[9].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[9].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[10].id.in:
+    port Z[0] of cell ringosc.dstage[9].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[9].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[8].id.d1:
+    port Z[0] of cell ringosc.dstage[8].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[8].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[8].id.out:
+    port Z[0] of cell ringosc.dstage[8].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[8].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[7].id.d1:
+    port Z[0] of cell ringosc.dstage[7].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[7].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[7].id.out:
+    port Z[0] of cell ringosc.dstage[7].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[7].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[6].id.d1:
+    port Z[0] of cell ringosc.dstage[6].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[6].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[6].id.out:
+    port Z[0] of cell ringosc.dstage[6].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[6].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[5].id.d1:
+    port Z[0] of cell ringosc.dstage[5].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[5].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[5].id.out:
+    port Z[0] of cell ringosc.dstage[5].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[5].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[4].id.d1:
+    port Z[0] of cell ringosc.dstage[4].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[4].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[4].id.out:
+    port Z[0] of cell ringosc.dstage[4].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[4].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[3].id.d1:
+    port Z[0] of cell ringosc.dstage[3].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[3].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[3].id.out:
+    port Z[0] of cell ringosc.dstage[3].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[3].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[2].id.d1:
+    port Z[0] of cell ringosc.dstage[2].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[2].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[2].id.out:
+    port Z[0] of cell ringosc.dstage[2].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[2].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[1].id.d1:
+    port Z[0] of cell ringosc.dstage[1].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[1].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[1].id.out:
+    port Z[0] of cell ringosc.dstage[1].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[1].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[11].id.d1:
+    port Z[0] of cell ringosc.dstage[11].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[11].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[11].id.out:
+    port Z[0] of cell ringosc.dstage[11].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[11].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[10].id.d1:
+    port Z[0] of cell ringosc.dstage[10].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[10].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[10].id.out:
+    port Z[0] of cell ringosc.dstage[10].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[10].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[0].id.d1:
+    port Z[0] of cell ringosc.dstage[0].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[0].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[0].id.out:
+    port Z[0] of cell ringosc.dstage[0].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[0].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+found and reported 26 problems.
+
+6.7. Executing OPT pass (performing simple optimizations).
+
+6.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module digital_pll.
+
+6.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\digital_pll'.
+Removed a total of 0 cells.
+
+6.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \digital_pll..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+6.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \digital_pll.
+Performed a total of 0 changes.
+
+6.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\digital_pll'.
+Removed a total of 0 cells.
+
+6.7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \digital_pll..
+
+6.7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module digital_pll.
+
+6.7.9. Finished OPT passes. (There is nothing left to do.)
+
+6.8. Executing FSM pass (extract and optimize FSM).
+
+6.8.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+6.8.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+6.8.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+6.8.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \digital_pll..
+
+6.8.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+6.8.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+6.8.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+6.8.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+6.9. Executing OPT pass (performing simple optimizations).
+
+6.9.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module digital_pll.
+
+6.9.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\digital_pll'.
+Removed a total of 0 cells.
+
+6.9.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \digital_pll..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+6.9.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \digital_pll.
+Performed a total of 0 changes.
+
+6.9.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\digital_pll'.
+Removed a total of 0 cells.
+
+6.9.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $flatten\pll_control.$procdff$99 ($adff) from module digital_pll (D = { \pll_control.prep [1:0] 1'1 }, Q = \pll_control.prep).
+Adding EN signal on $flatten\pll_control.$procdff$102 ($adff) from module digital_pll (D = $flatten\pll_control.$procmux$81_Y, Q = \pll_control.tval).
+Adding EN signal on $flatten\pll_control.$procdff$101 ($adff) from module digital_pll (D = \pll_control.count0, Q = \pll_control.count1).
+Adding EN signal on $flatten\pll_control.$procdff$100 ($adff) from module digital_pll (D = $flatten\pll_control.$0\count0[4:0], Q = \pll_control.count0).
+
+6.9.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \digital_pll..
+Removed 4 unused cells and 4 unused wires.
+<suppressed ~5 debug messages>
+
+6.9.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module digital_pll.
+<suppressed ~2 debug messages>
+
+6.9.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.9.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \digital_pll..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+6.9.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \digital_pll.
+Performed a total of 0 changes.
+
+6.9.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\digital_pll'.
+Removed a total of 0 cells.
+
+6.9.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.9.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \digital_pll..
+
+6.9.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module digital_pll.
+
+6.9.16. Finished OPT passes. (There is nothing left to do.)
+
+6.10. Executing WREDUCE pass (reducing word size of cells).
+Removed top 2 bits (of 3) from port B of cell digital_pll.$eq$./designs/digital_pll/src/digital_pll.v:65$70 ($eq).
+Removed top 1 bits (of 3) from port B of cell digital_pll.$eq$./designs/digital_pll/src/digital_pll.v:66$71 ($eq).
+Removed top 1 bits (of 3) from port B of cell digital_pll.$eq$./designs/digital_pll/src/digital_pll.v:67$72 ($eq).
+Removed cell digital_pll.$flatten\pll_control.$procmux$90 ($mux).
+Removed cell digital_pll.$flatten\pll_control.$procmux$78 ($mux).
+Removed top 31 bits (of 32) from port B of cell digital_pll.$flatten\pll_control.$add$./designs/digital_pll/src/digital_pll_controller.v:123$63 ($add).
+Removed top 27 bits (of 32) from port Y of cell digital_pll.$flatten\pll_control.$add$./designs/digital_pll/src/digital_pll_controller.v:123$63 ($add).
+Removed top 31 bits (of 32) from port B of cell digital_pll.$flatten\pll_control.$sub$./designs/digital_pll/src/digital_pll_controller.v:118$61 ($sub).
+Removed top 25 bits (of 32) from port Y of cell digital_pll.$flatten\pll_control.$sub$./designs/digital_pll/src/digital_pll_controller.v:118$61 ($sub).
+Removed top 31 bits (of 32) from port B of cell digital_pll.$flatten\pll_control.$add$./designs/digital_pll/src/digital_pll_controller.v:116$59 ($add).
+Removed top 25 bits (of 32) from port Y of cell digital_pll.$flatten\pll_control.$add$./designs/digital_pll/src/digital_pll_controller.v:116$59 ($add).
+Removed top 5 bits (of 26) from mux cell digital_pll.$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:95$28 ($mux).
+Removed top 1 bits (of 5) from port B of cell digital_pll.$flatten\pll_control.$eq$./designs/digital_pll/src/digital_pll_controller.v:85$17 ($eq).
+Removed top 1 bits (of 5) from port B of cell digital_pll.$flatten\pll_control.$eq$./designs/digital_pll/src/digital_pll_controller.v:84$16 ($eq).
+Removed top 1 bits (of 5) from port B of cell digital_pll.$flatten\pll_control.$eq$./designs/digital_pll/src/digital_pll_controller.v:83$15 ($eq).
+Removed top 1 bits (of 5) from port B of cell digital_pll.$flatten\pll_control.$eq$./designs/digital_pll/src/digital_pll_controller.v:82$14 ($eq).
+Removed top 1 bits (of 5) from port B of cell digital_pll.$flatten\pll_control.$eq$./designs/digital_pll/src/digital_pll_controller.v:81$13 ($eq).
+Removed top 1 bits (of 5) from port B of cell digital_pll.$flatten\pll_control.$eq$./designs/digital_pll/src/digital_pll_controller.v:80$12 ($eq).
+Removed top 1 bits (of 5) from port B of cell digital_pll.$flatten\pll_control.$eq$./designs/digital_pll/src/digital_pll_controller.v:79$11 ($eq).
+Removed top 1 bits (of 5) from port B of cell digital_pll.$flatten\pll_control.$eq$./designs/digital_pll/src/digital_pll_controller.v:78$10 ($eq).
+Removed top 2 bits (of 5) from port B of cell digital_pll.$flatten\pll_control.$eq$./designs/digital_pll/src/digital_pll_controller.v:77$9 ($eq).
+Removed top 2 bits (of 5) from port B of cell digital_pll.$flatten\pll_control.$eq$./designs/digital_pll/src/digital_pll_controller.v:76$8 ($eq).
+Removed top 2 bits (of 5) from port B of cell digital_pll.$flatten\pll_control.$eq$./designs/digital_pll/src/digital_pll_controller.v:75$7 ($eq).
+Removed top 2 bits (of 5) from port B of cell digital_pll.$flatten\pll_control.$eq$./designs/digital_pll/src/digital_pll_controller.v:74$6 ($eq).
+Removed top 3 bits (of 5) from port B of cell digital_pll.$flatten\pll_control.$eq$./designs/digital_pll/src/digital_pll_controller.v:73$5 ($eq).
+Removed top 3 bits (of 5) from port B of cell digital_pll.$flatten\pll_control.$eq$./designs/digital_pll/src/digital_pll_controller.v:72$4 ($eq).
+Removed top 4 bits (of 5) from port B of cell digital_pll.$flatten\pll_control.$eq$./designs/digital_pll/src/digital_pll_controller.v:71$3 ($eq).
+Removed top 25 bits (of 32) from wire digital_pll.$flatten\pll_control.$add$./designs/digital_pll/src/digital_pll_controller.v:116$59_Y.
+Removed top 5 bits (of 26) from wire digital_pll.$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:95$28_Y.
+
+6.11. Executing PEEPOPT pass (run peephole optimizers).
+
+6.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \digital_pll..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+6.13. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module digital_pll:
+  creating $macc model for $flatten\pll_control.$add$./designs/digital_pll/src/digital_pll_controller.v:116$59 ($add).
+  creating $macc model for $flatten\pll_control.$add$./designs/digital_pll/src/digital_pll_controller.v:123$63 ($add).
+  creating $macc model for $flatten\pll_control.$add$./designs/digital_pll/src/digital_pll_controller.v:65$1 ($add).
+  creating $macc model for $flatten\pll_control.$sub$./designs/digital_pll/src/digital_pll_controller.v:118$61 ($sub).
+  creating $alu model for $macc $flatten\pll_control.$sub$./designs/digital_pll/src/digital_pll_controller.v:118$61.
+  creating $alu model for $macc $flatten\pll_control.$add$./designs/digital_pll/src/digital_pll_controller.v:65$1.
+  creating $alu model for $macc $flatten\pll_control.$add$./designs/digital_pll/src/digital_pll_controller.v:123$63.
+  creating $alu model for $macc $flatten\pll_control.$add$./designs/digital_pll/src/digital_pll_controller.v:116$59.
+  creating $alu model for $flatten\pll_control.$gt$./designs/digital_pll/src/digital_pll_controller.v:115$58 ($gt): new $alu
+  creating $alu model for $flatten\pll_control.$lt$./designs/digital_pll/src/digital_pll_controller.v:117$60 ($lt): merged with $flatten\pll_control.$gt$./designs/digital_pll/src/digital_pll_controller.v:115$58.
+  creating $alu cell for $flatten\pll_control.$gt$./designs/digital_pll/src/digital_pll_controller.v:115$58, $flatten\pll_control.$lt$./designs/digital_pll/src/digital_pll_controller.v:117$60: $auto$alumacc.cc:485:replace_alu$116
+  creating $alu cell for $flatten\pll_control.$add$./designs/digital_pll/src/digital_pll_controller.v:116$59: $auto$alumacc.cc:485:replace_alu$127
+  creating $alu cell for $flatten\pll_control.$add$./designs/digital_pll/src/digital_pll_controller.v:123$63: $auto$alumacc.cc:485:replace_alu$130
+  creating $alu cell for $flatten\pll_control.$add$./designs/digital_pll/src/digital_pll_controller.v:65$1: $auto$alumacc.cc:485:replace_alu$133
+  creating $alu cell for $flatten\pll_control.$sub$./designs/digital_pll/src/digital_pll_controller.v:118$61: $auto$alumacc.cc:485:replace_alu$136
+  created 5 $alu and 0 $macc cells.
+
+6.14. Executing SHARE pass (SAT-based resource sharing).
+
+6.15. Executing OPT pass (performing simple optimizations).
+
+6.15.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module digital_pll.
+<suppressed ~1 debug messages>
+
+6.15.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\digital_pll'.
+Removed a total of 0 cells.
+
+6.15.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \digital_pll..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+6.15.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \digital_pll.
+Performed a total of 0 changes.
+
+6.15.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\digital_pll'.
+Removed a total of 0 cells.
+
+6.15.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.15.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \digital_pll..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+6.15.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module digital_pll.
+
+6.15.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.15.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \digital_pll..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+6.15.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \digital_pll.
+Performed a total of 0 changes.
+
+6.15.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\digital_pll'.
+Removed a total of 0 cells.
+
+6.15.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.15.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \digital_pll..
+
+6.15.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module digital_pll.
+
+6.15.16. Finished OPT passes. (There is nothing left to do.)
+
+6.16. Executing MEMORY pass.
+
+6.16.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+6.16.2. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+
+6.16.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \digital_pll..
+
+6.16.4. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+6.16.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \digital_pll..
+
+6.16.6. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+6.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \digital_pll..
+
+6.18. Executing OPT pass (performing simple optimizations).
+
+6.18.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module digital_pll.
+<suppressed ~1 debug messages>
+
+6.18.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\digital_pll'.
+Removed a total of 0 cells.
+
+6.18.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.18.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \digital_pll..
+
+6.18.5. Finished fast OPT passes.
+
+6.19. Executing MEMORY_MAP pass (converting $mem cells to logic and flip-flops).
+
+6.20. Executing OPT pass (performing simple optimizations).
+
+6.20.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module digital_pll.
+
+6.20.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\digital_pll'.
+Removed a total of 0 cells.
+
+6.20.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \digital_pll..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+6.20.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:94$29:
+      Old ports: A={ 5'11111 $auto$wreduce.cc:454:run$114 [20:0] }, B=26'11111011111011111111111111, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:94$29_Y
+      New ports: A=$auto$wreduce.cc:454:run$114 [20:0], B=21'011111011111111111111, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:94$29_Y [20:0]
+      New connections: $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:94$29_Y [25:21] = 5'11111
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:95$28:
+      Old ports: A=21'111111111111111111111, B=21'011111111111111111111, Y=$auto$wreduce.cc:454:run$114 [20:0]
+      New ports: A=1'1, B=1'0, Y=$auto$wreduce.cc:454:run$114 [20]
+      New connections: $auto$wreduce.cc:454:run$114 [19:0] = 20'11111111111111111111
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:93$30:
+      Old ports: A=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:94$29_Y, B=26'10111011111011111111111111, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:93$30_Y
+      New ports: A={ 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:94$29_Y [20:0] }, B=22'0011111011111111111111, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:93$30_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:93$30_Y [20:0] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:93$30_Y [25] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:93$30_Y [23:21] } = 4'1111
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:94$29:
+      Old ports: A=$auto$wreduce.cc:454:run$114 [20:0], B=21'011111011111111111111, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:94$29_Y [20:0]
+      New ports: A={ $auto$wreduce.cc:454:run$114 [20] 1'1 }, B=2'00, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:94$29_Y [20] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:94$29_Y [14] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:94$29_Y [19:15] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:94$29_Y [13:0] } = 19'1111111111111111111
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31:
+      Old ports: A=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:93$30_Y, B=26'10111011011011111111111111, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31_Y
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:93$30_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:93$30_Y [20:0] }, B=22'0011011011111111111111, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31_Y [20:0] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31_Y [25] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31_Y [23:21] } = 4'1111
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:93$30:
+      Old ports: A={ 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:94$29_Y [20:0] }, B=22'0011111011111111111111, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:93$30_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:93$30_Y [20:0] }
+      New ports: A={ 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:94$29_Y [20] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:94$29_Y [14] }, B=3'000, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:93$30_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:93$30_Y [20] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:93$30_Y [14] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:93$30_Y [19:15] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:93$30_Y [13:0] } = 19'1111111111111111111
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32:
+      Old ports: A=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31_Y, B=26'10101011011011111111111111, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31_Y [24] 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31_Y [20:0] }, B=23'00011011011111111111111, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [22] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [20:0] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [25] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [23] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [21] } = 3'111
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31:
+      Old ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:93$30_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:93$30_Y [20:0] }, B=22'0011011011111111111111, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31_Y [20:0] }
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:93$30_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:93$30_Y [20] 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:93$30_Y [14] }, B=4'0000, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31_Y [20] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31_Y [17] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31_Y [14] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31_Y [19:18] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31_Y [16:15] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31_Y [13:0] } = 18'111111111111111111
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33:
+      Old ports: A=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y, B=26'10101011010011111111111111, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [22] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [20:0] }, B=23'00011010011111111111111, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [22] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [20:0] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [25] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [23] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [21] } = 3'111
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32:
+      Old ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31_Y [24] 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31_Y [20:0] }, B=23'00011011011111111111111, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [22] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [20:0] }
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31_Y [24] 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31_Y [20] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31_Y [17] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:92$31_Y [14] }, B=5'00000, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [22] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [20] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [17] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [14] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [19:18] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [16:15] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [13:0] } = 18'111111111111111111
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34:
+      Old ports: A=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y, B=26'10101010010011111111111111, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [22] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [20:0] }, B=23'00010010011111111111111, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [22] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [20:0] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [25] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [23] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [21] } = 3'111
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33:
+      Old ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [22] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [20:0] }, B=23'00011010011111111111111, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [22] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [20:0] }
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [22] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [20] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [17] 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:91$32_Y [14] }, B=6'000000, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [22] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [20] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [17] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [15:14] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [19:18] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [16] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [13:0] } = 17'11111111111111111
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35:
+      Old ports: A=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y, B=26'00101010010011111111111111, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y
+      New ports: A={ 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [22] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [20:0] }, B=24'000010010011111111111111, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [25:24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [22] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [20:0] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [23] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [21] } = 2'11
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34:
+      Old ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [22] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [20:0] }, B=23'00010010011111111111111, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [22] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [20:0] }
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [22] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [20] 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [17] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:90$33_Y [15:14] }, B=7'0000000, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [22] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [20] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [18:17] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [15:14] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [19] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [16] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [13:0] } = 16'1111111111111111
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36:
+      Old ports: A=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y, B=26'00100010010011111111111111, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36_Y
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [25:24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [22] 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [20:0] }, B=25'0000010010011111111111111, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36_Y [25:24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36_Y [22:0] }
+      New connections: $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36_Y [23] = 1'1
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35:
+      Old ports: A={ 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [22] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [20:0] }, B=24'000010010011111111111111, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [25:24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [22] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [20:0] }
+      New ports: A={ 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [22] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [20] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [18:17] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:89$34_Y [15:14] }, B=8'00000000, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [25:24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [22] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [20] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [18:17] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [15:14] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [19] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [16] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [13:0] } = 16'1111111111111111
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:86$37:
+      Old ports: A=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36_Y, B=26'00100010000011111111111111, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:86$37_Y
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36_Y [25:24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36_Y [22:0] }, B=25'0000010000011111111111111, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:86$37_Y [25:24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:86$37_Y [22:0] }
+      New connections: $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:86$37_Y [23] = 1'1
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36:
+      Old ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [25:24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [22] 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [20:0] }, B=25'0000010010011111111111111, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36_Y [25:24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36_Y [22:0] }
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [25:24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [22] 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [20] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [18:17] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:88$35_Y [15:14] }, B=9'000000000, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36_Y [25:24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36_Y [22:20] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36_Y [18:17] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36_Y [15:14] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36_Y [19] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36_Y [16] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36_Y [13:0] } = 16'1111111111111111
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:86$37:
+      Old ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36_Y [25:24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36_Y [22:0] }, B=25'0000010000011111111111111, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:86$37_Y [25:24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:86$37_Y [22:0] }
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36_Y [25:24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36_Y [22:20] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36_Y [18:17] 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:87$36_Y [15:14] }, B=10'0000000000, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:86$37_Y [25:24] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:86$37_Y [22:20] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:86$37_Y [18:14] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:86$37_Y [19] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:86$37_Y [13:0] } = 15'111111111111111
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:85$38:
+      Old ports: A=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:86$37_Y, B=26'00000010000011111111111111, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:85$38_Y
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:86$37_Y [25:24] 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:86$37_Y [22:20] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:86$37_Y [18:14] }, B=11'00000000000, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:85$38_Y [25:20] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:85$38_Y [18:14] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:85$38_Y [19] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:85$38_Y [13:0] } = 15'111111111111111
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:84$39:
+      Old ports: A=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:85$38_Y, B=26'00000000000011111111111111, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:84$39_Y
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:85$38_Y [25:20] 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:85$38_Y [18:14] }, B=12'000000000000, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:84$39_Y [25:14]
+      New connections: $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:84$39_Y [13:0] = 14'11111111111111
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:83$40:
+      Old ports: A=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:84$39_Y, B=26'00000000000001111111111111, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:83$40_Y
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:84$39_Y [25:14] 1'1 }, B=13'0000000000000, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:83$40_Y [25:13]
+      New connections: $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:83$40_Y [12:0] = 13'1111111111111
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:82$41:
+      Old ports: A=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:83$40_Y, B=26'00000000000001111101111111, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:82$41_Y
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:83$40_Y [25:13] 1'1 }, B=14'00000000000000, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:82$41_Y [25:13] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:82$41_Y [7] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:82$41_Y [12:8] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:82$41_Y [6:0] } = 12'111111111111
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:81$42:
+      Old ports: A=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:82$41_Y, B=26'00000000000001111101111101, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:81$42_Y
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:82$41_Y [25:13] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:82$41_Y [7] 1'1 }, B=15'000000000000000, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:81$42_Y [25:13] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:81$42_Y [7] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:81$42_Y [1] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:81$42_Y [12:8] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:81$42_Y [6:2] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:81$42_Y [0] } = 11'11111111111
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:80$43:
+      Old ports: A=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:81$42_Y, B=26'00000000000001011101111101, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:80$43_Y
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:81$42_Y [25:13] 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:81$42_Y [7] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:81$42_Y [1] }, B=16'0000000000000000, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:80$43_Y [25:13] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:80$43_Y [11] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:80$43_Y [7] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:80$43_Y [1] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:80$43_Y [12] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:80$43_Y [10:8] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:80$43_Y [6:2] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:80$43_Y [0] } = 10'1111111111
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:79$44:
+      Old ports: A=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:80$43_Y, B=26'00000000000001011101101101, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:79$44_Y
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:80$43_Y [25:13] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:80$43_Y [11] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:80$43_Y [7] 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:80$43_Y [1] }, B=17'00000000000000000, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:79$44_Y [25:13] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:79$44_Y [11] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:79$44_Y [7] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:79$44_Y [4] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:79$44_Y [1] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:79$44_Y [12] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:79$44_Y [10:8] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:79$44_Y [6:5] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:79$44_Y [3:2] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:79$44_Y [0] } = 9'111111111
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:78$45:
+      Old ports: A=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:79$44_Y, B=26'00000000000001010101101101, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:78$45_Y
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:79$44_Y [25:13] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:79$44_Y [11] 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:79$44_Y [7] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:79$44_Y [4] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:79$44_Y [1] }, B=18'000000000000000000, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:78$45_Y [25:13] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:78$45_Y [11] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:78$45_Y [9] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:78$45_Y [7] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:78$45_Y [4] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:78$45_Y [1] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:78$45_Y [12] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:78$45_Y [10] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:78$45_Y [8] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:78$45_Y [6:5] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:78$45_Y [3:2] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:78$45_Y [0] } = 8'11111111
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:77$46:
+      Old ports: A=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:78$45_Y, B=26'00000000000001010101101001, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:77$46_Y
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:78$45_Y [25:13] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:78$45_Y [11] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:78$45_Y [9] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:78$45_Y [7] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:78$45_Y [4] 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:78$45_Y [1] }, B=19'0000000000000000000, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:77$46_Y [25:13] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:77$46_Y [11] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:77$46_Y [9] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:77$46_Y [7] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:77$46_Y [4] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:77$46_Y [2:1] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:77$46_Y [12] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:77$46_Y [10] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:77$46_Y [8] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:77$46_Y [6:5] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:77$46_Y [3] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:77$46_Y [0] } = 7'1111111
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:76$47:
+      Old ports: A=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:77$46_Y, B=26'00000000000001010101001001, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:76$47_Y
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:77$46_Y [25:13] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:77$46_Y [11] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:77$46_Y [9] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:77$46_Y [7] 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:77$46_Y [4] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:77$46_Y [2:1] }, B=20'00000000000000000000, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:76$47_Y [25:13] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:76$47_Y [11] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:76$47_Y [9] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:76$47_Y [7] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:76$47_Y [5:4] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:76$47_Y [2:1] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:76$47_Y [12] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:76$47_Y [10] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:76$47_Y [8] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:76$47_Y [6] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:76$47_Y [3] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:76$47_Y [0] } = 6'111111
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:75$48:
+      Old ports: A=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:76$47_Y, B=26'00000000000000010101001001, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:75$48_Y
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:76$47_Y [25:13] 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:76$47_Y [11] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:76$47_Y [9] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:76$47_Y [7] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:76$47_Y [5:4] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:76$47_Y [2:1] }, B=21'000000000000000000000, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:75$48_Y [25:11] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:75$48_Y [9] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:75$48_Y [7] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:75$48_Y [5:4] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:75$48_Y [2:1] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:75$48_Y [10] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:75$48_Y [8] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:75$48_Y [6] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:75$48_Y [3] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:75$48_Y [0] } = 5'11111
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:74$49:
+      Old ports: A=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:75$48_Y, B=26'00000000000000010001001001, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:74$49_Y
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:75$48_Y [25:11] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:75$48_Y [9] 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:75$48_Y [7] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:75$48_Y [5:4] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:75$48_Y [2:1] }, B=22'0000000000000000000000, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:74$49_Y [25:11] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:74$49_Y [9:7] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:74$49_Y [5:4] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:74$49_Y [2:1] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:74$49_Y [10] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:74$49_Y [6] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:74$49_Y [3] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:74$49_Y [0] } = 4'1111
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:73$50:
+      Old ports: A=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:74$49_Y, B=26'00000000000000010001000001, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:73$50_Y
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:74$49_Y [25:11] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:74$49_Y [9:7] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:74$49_Y [5:4] 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:74$49_Y [2:1] }, B=23'00000000000000000000000, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:73$50_Y [25:11] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:73$50_Y [9:7] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:73$50_Y [5:1] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:73$50_Y [10] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:73$50_Y [6] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:73$50_Y [0] } = 3'111
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:72$51:
+      Old ports: A=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:73$50_Y, B=26'00000000000000000001000001, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:72$51_Y
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:73$50_Y [25:11] 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:73$50_Y [9:7] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:73$50_Y [5:1] }, B=24'000000000000000000000000, Y={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:72$51_Y [25:7] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:72$51_Y [5:1] }
+      New connections: { $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:72$51_Y [6] $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:72$51_Y [0] } = 2'11
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:71$52:
+      Old ports: A=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:72$51_Y, B=26'00000000000000000000000001, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:71$52_Y
+      New ports: A={ $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:72$51_Y [25:7] 1'1 $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:72$51_Y [5:1] }, B=25'0000000000000000000000000, Y=$flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:71$52_Y [25:1]
+      New connections: $flatten\pll_control.$ternary$./designs/digital_pll/src/digital_pll_controller.v:71$52_Y [0] = 1'1
+  Optimizing cells in module \digital_pll.
+Performed a total of 34 changes.
+
+6.20.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\digital_pll'.
+Removed a total of 0 cells.
+
+6.20.6. Executing OPT_SHARE pass.
+    Found cells that share an operand and can be merged by moving the $mux $flatten\pll_control.$procmux$81 in front of them:
+        $auto$alumacc.cc:485:replace_alu$136
+        $auto$alumacc.cc:485:replace_alu$127
+
+6.20.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.20.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \digital_pll..
+Removed 0 unused cells and 6 unused wires.
+<suppressed ~1 debug messages>
+
+6.20.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module digital_pll.
+<suppressed ~3 debug messages>
+
+6.20.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.20.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \digital_pll..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+6.20.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \digital_pll.
+    Consolidated identical input bits for $mux cell $auto$opt_share.cc:241:merge_operators$142:
+      Old ports: A=$auto$rtlil.cc:2123:Neg$140, B=7'0000001, Y=$auto$rtlil.cc:2218:Mux$143
+      New ports: A=1'1, B=1'0, Y=$auto$rtlil.cc:2218:Mux$143 [1]
+      New connections: { $auto$rtlil.cc:2218:Mux$143 [6:2] $auto$rtlil.cc:2218:Mux$143 [0] } = { $auto$rtlil.cc:2218:Mux$143 [1] $auto$rtlil.cc:2218:Mux$143 [1] $auto$rtlil.cc:2218:Mux$143 [1] $auto$rtlil.cc:2218:Mux$143 [1] $auto$rtlil.cc:2218:Mux$143 [1] 1'1 }
+  Optimizing cells in module \digital_pll.
+Performed a total of 1 changes.
+
+6.20.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\digital_pll'.
+Removed a total of 0 cells.
+
+6.20.14. Executing OPT_SHARE pass.
+
+6.20.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.20.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \digital_pll..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+6.20.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module digital_pll.
+<suppressed ~1 debug messages>
+
+6.20.18. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.20.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \digital_pll..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+6.20.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \digital_pll.
+Performed a total of 0 changes.
+
+6.20.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\digital_pll'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+6.20.22. Executing OPT_SHARE pass.
+
+6.20.23. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.20.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \digital_pll..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+6.20.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module digital_pll.
+
+6.20.26. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.20.27. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \digital_pll..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+6.20.28. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \digital_pll.
+Performed a total of 0 changes.
+
+6.20.29. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\digital_pll'.
+Removed a total of 0 cells.
+
+6.20.30. Executing OPT_SHARE pass.
+
+6.20.31. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.20.32. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \digital_pll..
+
+6.20.33. Executing OPT_EXPR pass (perform const folding).
+Optimizing module digital_pll.
+
+6.20.34. Finished OPT passes. (There is nothing left to do.)
+
+6.21. Executing TECHMAP pass (map to technology primitives).
+
+6.21.1. Executing Verilog-2005 frontend: /build/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/build/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+6.21.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod\_90_alu\A_SIGNED=0\B_SIGNED=0\A_WIDTH=5\B_WIDTH=5\Y_WIDTH=6 for cells of type $alu.
+Using template $paramod\_90_alu\A_SIGNED=0\B_SIGNED=0\A_WIDTH=5\B_WIDTH=6\Y_WIDTH=6 for cells of type $alu.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $ne.
+Using template $paramod\_90_alu\A_SIGNED=0\B_SIGNED=0\A_WIDTH=1\B_WIDTH=5\Y_WIDTH=5 for cells of type $alu.
+Using template $paramod\_90_alu\A_SIGNED=0\B_SIGNED=0\A_WIDTH=7\B_WIDTH=7\Y_WIDTH=7 for cells of type $alu.
+Using template $paramod\_90_lcu\WIDTH=5 for cells of type $lcu.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod\_90_lcu\WIDTH=6 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=7 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~618 debug messages>
+
+6.22. Executing OPT pass (performing simple optimizations).
+
+6.22.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module digital_pll.
+<suppressed ~598 debug messages>
+
+6.22.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\digital_pll'.
+<suppressed ~348 debug messages>
+Removed a total of 116 cells.
+
+6.22.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.22.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \digital_pll..
+Removed 49 unused cells and 302 unused wires.
+<suppressed ~50 debug messages>
+
+6.22.5. Finished fast OPT passes.
+
+6.23. Executing ABC pass (technology mapping using ABC).
+
+6.23.1. Extracting gate netlist of module `\digital_pll' to `<abc-temp-dir>/input.blif'..
+Extracted 548 gates and 614 wires to a netlist network with 64 inputs and 44 outputs.
+
+6.23.1.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/yosys-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+6.23.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        5
+ABC RESULTS:            ANDNOT cells:       90
+ABC RESULTS:               MUX cells:       31
+ABC RESULTS:              NAND cells:       16
+ABC RESULTS:               NOR cells:       11
+ABC RESULTS:               NOT cells:        7
+ABC RESULTS:                OR cells:      323
+ABC RESULTS:             ORNOT cells:       11
+ABC RESULTS:              XNOR cells:       12
+ABC RESULTS:               XOR cells:       19
+ABC RESULTS:        internal signals:      506
+ABC RESULTS:           input signals:       64
+ABC RESULTS:          output signals:       44
+Removing temp directory.
+
+6.24. Executing OPT pass (performing simple optimizations).
+
+6.24.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module digital_pll.
+<suppressed ~8 debug messages>
+
+6.24.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\digital_pll'.
+Removed a total of 0 cells.
+
+6.24.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.24.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \digital_pll..
+Removed 0 unused cells and 253 unused wires.
+<suppressed ~2 debug messages>
+
+6.24.5. Finished fast OPT passes.
+
+6.25. Executing HIERARCHY pass (managing design hierarchy).
+
+6.25.1. Analyzing design hierarchy..
+Top module:  \digital_pll
+
+6.25.2. Analyzing design hierarchy..
+Top module:  \digital_pll
+Removed 0 unused modules.
+
+6.26. Printing statistics.
+
+=== digital_pll ===
+
+   Number of wires:                615
+   Number of wire bits:            812
+   Number of public wires:         125
+   Number of public wire bits:     316
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                650
+     $_ANDNOT_                      90
+     $_AND_                          5
+     $_DFFE_PP0N_                    8
+     $_DFFE_PP0P_                   12
+     $_DFF_PP0_                      3
+     $_MUX_                         31
+     $_NAND_                        16
+     $_NOR_                         11
+     $_NOT_                          7
+     $_ORNOT_                       11
+     $_OR_                         323
+     $_XNOR_                        12
+     $_XOR_                         19
+     sky130_fd_sc_hd__clkbuf_1      13
+     sky130_fd_sc_hd__clkbuf_2      12
+     sky130_fd_sc_hd__clkinv_1      13
+     sky130_fd_sc_hd__clkinv_2       2
+     sky130_fd_sc_hd__clkinv_8       2
+     sky130_fd_sc_hd__conb_1         1
+     sky130_fd_sc_hd__dfrbp_1        4
+     sky130_fd_sc_hd__einvn_4       13
+     sky130_fd_sc_hd__einvn_8       13
+     sky130_fd_sc_hd__einvp_1        1
+     sky130_fd_sc_hd__einvp_2       26
+     sky130_fd_sc_hd__inv_4          1
+     sky130_fd_sc_hd__or2_2          1
+
+6.27. Executing CHECK pass (checking for obvious problems).
+checking module digital_pll..
+Warning: multiple conflicting drivers for digital_pll.\ringosc.iss.d1:
+    port Z[0] of cell ringosc.iss.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.iss.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[0].id.in:
+    port Z[0] of cell ringosc.iss.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.iss.delayenb0 (sky130_fd_sc_hd__einvn_8)
+    port Z[0] of cell ringosc.iss.reseten0 (sky130_fd_sc_hd__einvp_1)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[9].id.d1:
+    port Z[0] of cell ringosc.dstage[9].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[9].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[10].id.in:
+    port Z[0] of cell ringosc.dstage[9].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[9].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[8].id.d1:
+    port Z[0] of cell ringosc.dstage[8].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[8].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[8].id.out:
+    port Z[0] of cell ringosc.dstage[8].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[8].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[7].id.d1:
+    port Z[0] of cell ringosc.dstage[7].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[7].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[7].id.out:
+    port Z[0] of cell ringosc.dstage[7].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[7].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[6].id.d1:
+    port Z[0] of cell ringosc.dstage[6].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[6].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[6].id.out:
+    port Z[0] of cell ringosc.dstage[6].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[6].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[5].id.d1:
+    port Z[0] of cell ringosc.dstage[5].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[5].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[5].id.out:
+    port Z[0] of cell ringosc.dstage[5].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[5].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[4].id.d1:
+    port Z[0] of cell ringosc.dstage[4].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[4].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[4].id.out:
+    port Z[0] of cell ringosc.dstage[4].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[4].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[3].id.d1:
+    port Z[0] of cell ringosc.dstage[3].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[3].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[3].id.out:
+    port Z[0] of cell ringosc.dstage[3].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[3].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[2].id.d1:
+    port Z[0] of cell ringosc.dstage[2].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[2].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[2].id.out:
+    port Z[0] of cell ringosc.dstage[2].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[2].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[1].id.d1:
+    port Z[0] of cell ringosc.dstage[1].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[1].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[1].id.out:
+    port Z[0] of cell ringosc.dstage[1].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[1].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[11].id.d1:
+    port Z[0] of cell ringosc.dstage[11].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[11].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[11].id.out:
+    port Z[0] of cell ringosc.dstage[11].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[11].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[10].id.d1:
+    port Z[0] of cell ringosc.dstage[10].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[10].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[10].id.out:
+    port Z[0] of cell ringosc.dstage[10].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[10].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[0].id.d1:
+    port Z[0] of cell ringosc.dstage[0].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[0].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[0].id.out:
+    port Z[0] of cell ringosc.dstage[0].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[0].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+found and reported 26 problems.
+
+7. Executing SHARE pass (SAT-based resource sharing).
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module digital_pll.
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\digital_pll'.
+Removed a total of 0 cells.
+
+8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \digital_pll..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \digital_pll.
+Performed a total of 0 changes.
+
+8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\digital_pll'.
+Removed a total of 0 cells.
+
+8.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \digital_pll..
+
+8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module digital_pll.
+
+8.9. Finished OPT passes. (There is nothing left to do.)
+
+9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \digital_pll..
+Removed 0 unused cells and 24 unused wires.
+<suppressed ~24 debug messages>
+
+10. Printing statistics.
+
+=== digital_pll ===
+
+   Number of wires:                591
+   Number of wire bits:            671
+   Number of public wires:         101
+   Number of public wire bits:     175
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                650
+     $_ANDNOT_                      90
+     $_AND_                          5
+     $_DFFE_PP0N_                    8
+     $_DFFE_PP0P_                   12
+     $_DFF_PP0_                      3
+     $_MUX_                         31
+     $_NAND_                        16
+     $_NOR_                         11
+     $_NOT_                          7
+     $_ORNOT_                       11
+     $_OR_                         323
+     $_XNOR_                        12
+     $_XOR_                         19
+     sky130_fd_sc_hd__clkbuf_1      13
+     sky130_fd_sc_hd__clkbuf_2      12
+     sky130_fd_sc_hd__clkinv_1      13
+     sky130_fd_sc_hd__clkinv_2       2
+     sky130_fd_sc_hd__clkinv_8       2
+     sky130_fd_sc_hd__conb_1         1
+     sky130_fd_sc_hd__dfrbp_1        4
+     sky130_fd_sc_hd__einvn_4       13
+     sky130_fd_sc_hd__einvn_8       13
+     sky130_fd_sc_hd__einvp_1        1
+     sky130_fd_sc_hd__einvp_2       26
+     sky130_fd_sc_hd__inv_4          1
+     sky130_fd_sc_hd__or2_2          1
+
+mapping tbuf
+
+11. Executing TECHMAP pass (map to technology primitives).
+
+11.1. Executing Verilog-2005 frontend: /home/mariam/openlane/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v
+Parsing Verilog input from `/home/mariam/openlane/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_TBUF_'.
+Successfully finished Verilog frontend.
+
+11.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+12. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+13. Executing MUXCOVER pass (mapping to wider MUXes).
+Covering MUX trees in module digital_pll..
+  Treeifying 31 MUXes:
+    Found tree with 4 MUXes at root \clockc.
+    Found tree with 1 MUXes at root \ringosc.dstage[11].id.trim [0].
+    Found tree with 1 MUXes at root \ringosc.dstage[11].id.trim [1].
+    Found tree with 1 MUXes at root \ringosc.dstage[10].id.trim [0].
+    Found tree with 1 MUXes at root \ringosc.dstage[10].id.trim [1].
+    Found tree with 1 MUXes at root \ringosc.dstage[9].id.trim [0].
+    Found tree with 1 MUXes at root \ringosc.dstage[9].id.trim [1].
+    Found tree with 1 MUXes at root \ringosc.dstage[8].id.trim [0].
+    Found tree with 1 MUXes at root \ringosc.dstage[8].id.trim [1].
+    Found tree with 1 MUXes at root \ringosc.dstage[7].id.trim [0].
+    Found tree with 1 MUXes at root \ringosc.dstage[7].id.trim [1].
+    Found tree with 1 MUXes at root \ringosc.dstage[6].id.trim [0].
+    Found tree with 1 MUXes at root \ringosc.dstage[6].id.trim [1].
+    Found tree with 1 MUXes at root \ringosc.dstage[5].id.trim [0].
+    Found tree with 1 MUXes at root \ringosc.dstage[5].id.trim [1].
+    Found tree with 1 MUXes at root \ringosc.dstage[4].id.trim [0].
+    Found tree with 1 MUXes at root \ringosc.dstage[4].id.trim [1].
+    Found tree with 1 MUXes at root \ringosc.dstage[3].id.trim [0].
+    Found tree with 1 MUXes at root \ringosc.dstage[3].id.trim [1].
+    Found tree with 1 MUXes at root \ringosc.dstage[2].id.trim [0].
+    Found tree with 1 MUXes at root \ringosc.dstage[2].id.trim [1].
+    Found tree with 1 MUXes at root \ringosc.dstage[1].id.trim [0].
+    Found tree with 1 MUXes at root \ringosc.dstage[1].id.trim [1].
+    Found tree with 1 MUXes at root \ringosc.dstage[0].id.trim [0].
+    Found tree with 1 MUXes at root \ringosc.dstage[0].id.trim [1].
+    Found tree with 1 MUXes at root \ringosc.iss.trim [0].
+    Found tree with 1 MUXes at root \ringosc.iss.trim [1].
+    Found tree with 1 MUXes at root $abc$1645$new_n375_.
+    Finished treeification: Found 28 trees.
+  Covering trees:
+    Replaced tree at \clockc: 4 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[11].id.trim [0]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[11].id.trim [1]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[10].id.trim [0]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[10].id.trim [1]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[9].id.trim [0]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[9].id.trim [1]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[8].id.trim [0]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[8].id.trim [1]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[7].id.trim [0]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[7].id.trim [1]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[6].id.trim [0]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[6].id.trim [1]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[5].id.trim [0]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[5].id.trim [1]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[4].id.trim [0]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[4].id.trim [1]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[3].id.trim [0]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[3].id.trim [1]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[2].id.trim [0]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[2].id.trim [1]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[1].id.trim [0]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[1].id.trim [1]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[0].id.trim [0]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.dstage[0].id.trim [1]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.iss.trim [0]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \ringosc.iss.trim [1]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $abc$1645$new_n375_: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+  Added a total of 0 decoder MUXes.
+<suppressed ~531 debug messages>
+
+14. Executing TECHMAP pass (map to technology primitives).
+
+14.1. Executing Verilog-2005 frontend: /home/mariam/openlane/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/mux4_map.v
+Parsing Verilog input from `/home/mariam/openlane/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/mux4_map.v' to AST representation.
+Generating RTLIL representation for module `\$_MUX4_'.
+Successfully finished Verilog frontend.
+
+14.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+15. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+16. Executing TECHMAP pass (map to technology primitives).
+
+16.1. Executing Verilog-2005 frontend: /home/mariam/openlane/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/mux2_map.v
+Parsing Verilog input from `/home/mariam/openlane/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/mux2_map.v' to AST representation.
+Generating RTLIL representation for module `\$_MUX_'.
+Successfully finished Verilog frontend.
+
+16.2. Continuing TECHMAP pass.
+Using template \$_MUX_ for cells of type $_MUX_.
+No more expansions possible.
+<suppressed ~34 debug messages>
+
+17. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+18. Executing TECHMAP pass (map to technology primitives).
+
+18.1. Executing Verilog-2005 frontend: /home/mariam/openlane/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v
+Parsing Verilog input from `/home/mariam/openlane/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Successfully finished Verilog frontend.
+
+18.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+19. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+20. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_2 (noninv, pins=3, area=21.27) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__dfbbn_2 (noninv, pins=6, area=35.03) is a direct match for cell type $_DFFSR_NNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_2 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_2 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_2 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+20.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\digital_pll':
+  mapped 23 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_2 cells.
+
+21. Printing statistics.
+
+=== digital_pll ===
+
+   Number of wires:                761
+   Number of wire bits:            841
+   Number of public wires:         101
+   Number of public wire bits:     175
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                693
+     $_ANDNOT_                      90
+     $_AND_                          5
+     $_MUX_                         20
+     $_NAND_                        16
+     $_NOR_                         11
+     $_NOT_                         30
+     $_ORNOT_                       11
+     $_OR_                         323
+     $_XNOR_                        12
+     $_XOR_                         19
+     sky130_fd_sc_hd__clkbuf_1      13
+     sky130_fd_sc_hd__clkbuf_2      12
+     sky130_fd_sc_hd__clkinv_1      13
+     sky130_fd_sc_hd__clkinv_2       2
+     sky130_fd_sc_hd__clkinv_8       2
+     sky130_fd_sc_hd__conb_1         1
+     sky130_fd_sc_hd__dfrbp_1        4
+     sky130_fd_sc_hd__dfrtp_2       23
+     sky130_fd_sc_hd__einvn_4       13
+     sky130_fd_sc_hd__einvn_8       13
+     sky130_fd_sc_hd__einvp_1        1
+     sky130_fd_sc_hd__einvp_2       26
+     sky130_fd_sc_hd__inv_4          1
+     sky130_fd_sc_hd__mux2_1        31
+     sky130_fd_sc_hd__or2_2          1
+
+[INFO]: ABC: WireLoad : S_4
+
+22. Executing ABC pass (technology mapping using ABC).
+
+22.1. Extracting gate netlist of module `\digital_pll' to `/tmp/yosys-abc-tIW1WN/input.blif'..
+Extracted 537 gates and 572 wires to a netlist network with 34 inputs and 76 outputs.
+
+22.1.1. Executing ABC.
+Running ABC command: /build/bin/yosys-abc -s -f /tmp/yosys-abc-tIW1WN/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-tIW1WN/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-tIW1WN/input.blif 
+ABC: + read_lib -w /openLANE_flow/designs/digital_pll/runs/fifth_run/tmp/trimmed.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.09 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/openLANE_flow/designs/digital_pll/runs/fifth_run/tmp/trimmed.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.14 sec
+ABC: Memory =    7.77 MB. Time =     0.14 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /openLANE_flow/designs/digital_pll/runs/fifth_run/tmp/synthesis/yosys.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_8".
+ABC: Setting output load to be 17.650000.
+ABC: + read_constr /openLANE_flow/designs/digital_pll/runs/fifth_run/tmp/synthesis/yosys.sdc 
+ABC: + fx 
+ABC: + mfs 
+ABC: + strash 
+ABC: + refactor 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + refactor 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + refactor -z 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + retime -D -D 25000 -M 5 
+ABC: + scleanup 
+ABC: Error: The network is combinational.
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + refactor 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + refactor -z 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + refactor 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + refactor -z 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + refactor 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + refactor -z 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + fraig_restore 
+ABC: + amap -m -Q 0.1 -F 20 -A 20 -C 5000 
+ABC: + retime -D -D 25000 
+ABC: + 
+ABC: + stime -p 
+ABC: WireLoad = "none"  Gates =    173 ( 35.3 %)   Cap = 12.4 ff (  6.1 %)   Area =     1239.94 ( 64.7 %)   Delay =  3618.77 ps  ( 18.5 %)               
+ABC: Path  0 --       7 : 0    6 pi                        A =   0.00  Df =  18.6  -12.2 ps  S =  33.5 ps  Cin =  0.0 ff  Cout =  15.5 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --     145 : 4    3 sky130_fd_sc_hd__a22o_2   A =  10.01  Df = 520.5  -96.2 ps  S =  61.3 ps  Cin =  2.3 ff  Cout =   8.2 ff  Cmax = 301.2 ff  G =  334  
+ABC: Path  2 --     146 : 1    1 sky130_fd_sc_hd__inv_2    A =   3.75  Df = 561.2 -111.2 ps  S =  22.4 ps  Cin =  4.5 ff  Cout =   2.0 ff  Cmax = 331.4 ff  G =   42  
+ABC: Path  3 --     147 : 4    3 sky130_fd_sc_hd__o2bb2a_2 A =  11.26  Df = 710.3  -20.1 ps  S =  53.5 ps  Cin =  1.8 ff  Cout =   5.5 ff  Cmax = 294.8 ff  G =  300  
+ABC: Path  4 --     155 : 4    2 sky130_fd_sc_hd__o2bb2a_2 A =  11.26  Df = 948.1  -12.5 ps  S =  47.1 ps  Cin =  1.8 ff  Cout =   4.0 ff  Cmax = 294.8 ff  G =  215  
+ABC: Path  5 --     157 : 3    2 sky130_fd_sc_hd__a21bo_2  A =  10.01  Df =1418.5 -168.9 ps  S =  49.3 ps  Cin =  2.0 ff  Cout =   6.1 ff  Cmax = 288.4 ff  G =  278  
+ABC: Path  6 --     172 : 3    1 sky130_fd_sc_hd__or3_2    A =   7.51  Df =1645.3 -130.7 ps  S =  73.4 ps  Cin =  1.5 ff  Cout =   2.4 ff  Cmax = 310.4 ff  G =  153  
+ABC: Path  7 --     173 : 5   12 sky130_fd_sc_hd__a41o_2   A =  11.26  Df =2002.7 -167.5 ps  S = 195.2 ps  Cin =  2.3 ff  Cout =  38.4 ff  Cmax = 325.0 ff  G = 1560  
+ABC: Path  8 --     198 : 3    2 sky130_fd_sc_hd__o21ai_2  A =   8.76  Df =3125.0 -380.8 ps  S = 129.3 ps  Cin =  4.5 ff  Cout =   7.1 ff  Cmax = 139.2 ff  G =  149  
+ABC: Path  9 --     200 : 5    1 sky130_fd_sc_hd__a221o_2  A =  11.26  Df =3509.3 -214.7 ps  S =  58.4 ps  Cin =  2.3 ff  Cout =   4.5 ff  Cmax = 299.4 ff  G =  188  
+ABC: Path 10 --     201 : 3    1 sky130_fd_sc_hd__o21ai_2  A =   8.76  Df =3618.8 -239.6 ps  S = 237.1 ps  Cin =  4.5 ff  Cout =  17.6 ff  Cmax = 139.2 ff  G =  388  
+ABC: Start-point = pi6 (\pll_control.count0 [1]).  End-point = po18 ($auto$rtlil.cc:2290:MuxGate$2253).
+ABC: + print_stats -m 
+ABC: netlist                       : i/o =   34/   76  lat =    0  nd =   173  edge =    436  area =1239.87  delay =22.00  lev = 22
+ABC: + write_blif /tmp/yosys-abc-tIW1WN/output.blif 
+
+22.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__a21bo_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21o_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a221o_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a221oi_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a22o_2 cells:       10
+ABC RESULTS:   sky130_fd_sc_hd__a2bb2o_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a311o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a31o_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__a32o_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a41o_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__and2_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and3_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and4_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__buf_1 cells:       23
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:       38
+ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__nand4_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__nor3_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__o21a_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_2 cells:       11
+ABC RESULTS:   sky130_fd_sc_hd__o221a_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__o22a_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__o2bb2a_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__o2bb2ai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o32a_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o41a_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__or2_2 cells:       16
+ABC RESULTS:   sky130_fd_sc_hd__or3_2 cells:        6
+ABC RESULTS:        internal signals:      462
+ABC RESULTS:           input signals:       34
+ABC RESULTS:          output signals:       76
+Removing temp directory.
+
+23. Executing SETUNDEF pass (replace undef values with defined constants).
+
+24. Executing HILOMAP pass (mapping to constant drivers).
+
+25. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+26. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \digital_pll..
+Removed 0 unused cells and 703 unused wires.
+<suppressed ~7 debug messages>
+
+27. Executing INSBUF pass (insert buffer cells for connected wires).
+Added digital_pll.$auto$insbuf.cc:79:execute$2466: \pll_control.clock -> \clockp [0]
+
+28. Executing CHECK pass (checking for obvious problems).
+checking module digital_pll..
+Warning: multiple conflicting drivers for digital_pll.\ringosc.iss.d1:
+    port Z[0] of cell ringosc.iss.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.iss.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[0].id.in:
+    port Z[0] of cell ringosc.iss.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.iss.delayenb0 (sky130_fd_sc_hd__einvn_8)
+    port Z[0] of cell ringosc.iss.reseten0 (sky130_fd_sc_hd__einvp_1)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[9].id.d1:
+    port Z[0] of cell ringosc.dstage[9].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[9].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[10].id.in:
+    port Z[0] of cell ringosc.dstage[9].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[9].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[8].id.d1:
+    port Z[0] of cell ringosc.dstage[8].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[8].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[8].id.out:
+    port Z[0] of cell ringosc.dstage[8].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[8].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[7].id.d1:
+    port Z[0] of cell ringosc.dstage[7].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[7].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[7].id.out:
+    port Z[0] of cell ringosc.dstage[7].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[7].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[6].id.d1:
+    port Z[0] of cell ringosc.dstage[6].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[6].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[6].id.out:
+    port Z[0] of cell ringosc.dstage[6].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[6].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[5].id.d1:
+    port Z[0] of cell ringosc.dstage[5].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[5].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[5].id.out:
+    port Z[0] of cell ringosc.dstage[5].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[5].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[4].id.d1:
+    port Z[0] of cell ringosc.dstage[4].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[4].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[4].id.out:
+    port Z[0] of cell ringosc.dstage[4].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[4].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[3].id.d1:
+    port Z[0] of cell ringosc.dstage[3].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[3].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[3].id.out:
+    port Z[0] of cell ringosc.dstage[3].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[3].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[2].id.d1:
+    port Z[0] of cell ringosc.dstage[2].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[2].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[2].id.out:
+    port Z[0] of cell ringosc.dstage[2].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[2].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[1].id.d1:
+    port Z[0] of cell ringosc.dstage[1].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[1].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[1].id.out:
+    port Z[0] of cell ringosc.dstage[1].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[1].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[11].id.d1:
+    port Z[0] of cell ringosc.dstage[11].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[11].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[11].id.out:
+    port Z[0] of cell ringosc.dstage[11].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[11].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[10].id.d1:
+    port Z[0] of cell ringosc.dstage[10].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[10].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[10].id.out:
+    port Z[0] of cell ringosc.dstage[10].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[10].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[0].id.d1:
+    port Z[0] of cell ringosc.dstage[0].id.delayen1 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[0].id.delayenb1 (sky130_fd_sc_hd__einvn_4)
+Warning: multiple conflicting drivers for digital_pll.\ringosc.dstage[0].id.out:
+    port Z[0] of cell ringosc.dstage[0].id.delayen0 (sky130_fd_sc_hd__einvp_2)
+    port Z[0] of cell ringosc.dstage[0].id.delayenb0 (sky130_fd_sc_hd__einvn_8)
+found and reported 26 problems.
+
+29. Printing statistics.
+
+=== digital_pll ===
+
+   Number of wires:                310
+   Number of wire bits:            345
+   Number of public wires:         134
+   Number of public wire bits:     169
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                330
+     sky130_fd_sc_hd__a21bo_2        2
+     sky130_fd_sc_hd__a21boi_2       1
+     sky130_fd_sc_hd__a21o_2         3
+     sky130_fd_sc_hd__a21oi_2        2
+     sky130_fd_sc_hd__a221o_2        3
+     sky130_fd_sc_hd__a221oi_2       1
+     sky130_fd_sc_hd__a22o_2        10
+     sky130_fd_sc_hd__a2bb2o_2       2
+     sky130_fd_sc_hd__a311o_2        1
+     sky130_fd_sc_hd__a31o_2         6
+     sky130_fd_sc_hd__a32o_2         3
+     sky130_fd_sc_hd__a41o_2         2
+     sky130_fd_sc_hd__and2_2         1
+     sky130_fd_sc_hd__and3_2         1
+     sky130_fd_sc_hd__and4_2         1
+     sky130_fd_sc_hd__buf_1         23
+     sky130_fd_sc_hd__buf_2          1
+     sky130_fd_sc_hd__clkbuf_1      13
+     sky130_fd_sc_hd__clkbuf_2      12
+     sky130_fd_sc_hd__clkinv_1      13
+     sky130_fd_sc_hd__clkinv_2       2
+     sky130_fd_sc_hd__clkinv_8       2
+     sky130_fd_sc_hd__conb_1         1
+     sky130_fd_sc_hd__dfrbp_1        4
+     sky130_fd_sc_hd__dfrtp_2       23
+     sky130_fd_sc_hd__einvn_4       13
+     sky130_fd_sc_hd__einvn_8       13
+     sky130_fd_sc_hd__einvp_1        1
+     sky130_fd_sc_hd__einvp_2       26
+     sky130_fd_sc_hd__inv_2         38
+     sky130_fd_sc_hd__inv_4          1
+     sky130_fd_sc_hd__mux2_1        31
+     sky130_fd_sc_hd__nand2_2        6
+     sky130_fd_sc_hd__nand4_2        1
+     sky130_fd_sc_hd__nor2_2         5
+     sky130_fd_sc_hd__nor3_2         4
+     sky130_fd_sc_hd__o21a_2         5
+     sky130_fd_sc_hd__o21ai_2       11
+     sky130_fd_sc_hd__o221a_2        4
+     sky130_fd_sc_hd__o22a_2         6
+     sky130_fd_sc_hd__o2bb2a_2       4
+     sky130_fd_sc_hd__o2bb2ai_2      1
+     sky130_fd_sc_hd__o32a_2         2
+     sky130_fd_sc_hd__o41a_2         2
+     sky130_fd_sc_hd__or2_2         17
+     sky130_fd_sc_hd__or3_2          6
+
+   Chip area for module '\digital_pll': 3235.603200
+
+30. Executing Verilog backend.
+Dumping module `\digital_pll'.
+
+Warnings: 27 unique messages, 79 total
+End of script. Logfile hash: d0ec98ab6d, CPU: user 2.77s system 0.04s, MEM: 46.39 MB peak
+Yosys 0.9+3621 (git sha1 84e9fa7, gcc 8.3.1 -fPIC -Os)
+Time spent: 36% 2x abc (1 sec), 13% 4x stat (0 sec), ...

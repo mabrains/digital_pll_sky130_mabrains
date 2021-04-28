@@ -1,0 +1,1 @@
+lvs {/openLANE_flow/designs/digital_pll/runs/second_run/results/magic/digital_pll.spice digital_pll} {/openLANE_flow/designs/digital_pll/runs/second_run/results/lvs/digital_pll.lvs.powered.v digital_pll} /home/mariam/openlane/pdks/sky130A/libs.tech/netgen/sky130A_setup.tcl /openLANE_flow/designs/digital_pll/runs/second_run/results/lvs/digital_pll.lvs.lef.log -json

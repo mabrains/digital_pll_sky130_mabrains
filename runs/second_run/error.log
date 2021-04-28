@@ -1,0 +1,4 @@
+during executing: "openroad -exit /openLANE_flow/scripts/openroad/or_replace.tcl |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/second_run/logs/placement/3-replace.log"
+Last 10 lines:
+child process exited abnormally
+
