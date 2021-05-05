@@ -1,0 +1,30 @@
+box 8635 19971 9029 20081
+feedback add "device missing 1 terminal;
+ connecting remainder to node VGND" pale
+box 8635 19631 9029 19805
+feedback add "device missing 1 terminal;
+ connecting remainder to node VPWR" pale
+box 14891 19971 15469 20081
+feedback add "device missing 1 terminal;
+ connecting remainder to node VGND" pale
+box 14891 19631 15469 19805
+feedback add "device missing 1 terminal;
+ connecting remainder to node VPWR" pale
+box 15995 19971 16941 20081
+feedback add "device missing 1 terminal;
+ connecting remainder to node VGND" pale
+box 15995 19631 16941 19805
+feedback add "device missing 1 terminal;
+ connecting remainder to node VPWR" pale
+box 17283 19971 17401 20081
+feedback add "device missing 1 terminal;
+ connecting remainder to node VGND" pale
+box 17283 19631 17401 19805
+feedback add "device missing 1 terminal;
+ connecting remainder to node VPWR" pale
+box 17835 19971 18045 20081
+feedback add "device missing 1 terminal;
+ connecting remainder to node VGND" pale
+box 17835 19631 18045 19805
+feedback add "device missing 1 terminal;
+ connecting remainder to node VPWR" pale

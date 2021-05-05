@@ -7,7 +7,7 @@ Notice 0:
 Reading DEF file: /openLANE_flow/designs/digital_pll/runs/sixth_run/results/routing/digital_pll.def
 Notice 0: Design: digital_pll
 Notice 0:     Created 55 pins.
-Notice 0:     Created 1541 components and 7073 component-terminals.
+Notice 0:     Created 1423 components and 6601 component-terminals.
 Notice 0:     Created 2 special nets and 0 connections.
 Notice 0:     Created 391 nets and 1188 connections.
 Notice 0: Finished DEF file: /openLANE_flow/designs/digital_pll/runs/sixth_run/results/routing/digital_pll.def
@@ -16,4 +16,4 @@ Default power net:  VPWR
 Default ground net: VGND
 Found a total of 1 power ports.
 Found a total of 1 ground ports.
-Modified power connections of 1541 cells (Remaining: 0 ).
+Modified power connections of 1423 cells (Remaining: 0 ).

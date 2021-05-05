@@ -10,7 +10,7 @@ Notice 0:
 Reading DEF file: /openLANE_flow/designs/digital_pll/runs/sixth_run/tmp/routing/21-digital_pll.powered.def
 Notice 0: Design: digital_pll
 Notice 0:     Created 47 pins.
-Notice 0:     Created 1541 components and 7073 component-terminals.
+Notice 0:     Created 1423 components and 6601 component-terminals.
 Notice 0:     Created 2 special nets and 0 connections.
-Notice 0:     Created 393 nets and 7072 connections.
+Notice 0:     Created 393 nets and 6600 connections.
 Notice 0: Finished DEF file: /openLANE_flow/designs/digital_pll/runs/sixth_run/tmp/routing/21-digital_pll.powered.def

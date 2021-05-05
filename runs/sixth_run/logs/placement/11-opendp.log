@@ -24,7 +24,7 @@ design area           10697.8 u^2
 fixed area              460.4 u^2
 movable area           3061.7 u^2
 utilization                30 %
-utilization padded         48 %
+utilization padded         30 %
 rows                       38
 row height                2.7 u
 
@@ -33,11 +33,11 @@ Placement Analysis
 total displacement        0.0 u
 average displacement      0.0 u
 max displacement          0.0 u
-original HPWL          8005.5 u
-legalized HPWL         8240.5 u
+original HPWL          7593.0 u
+legalized HPWL         7800.5 u
 delta HPWL                  3 %
 
-[INFO DPL-0020] Mirrored 152 instances
-[INFO DPL-0021] HPWL before            8240.5 u
-[INFO DPL-0022] HPWL after             8005.5 u
-[INFO DPL-0023] HPWL delta               -2.9 %
+[INFO DPL-0020] Mirrored 148 instances
+[INFO DPL-0021] HPWL before            7800.5 u
+[INFO DPL-0022] HPWL after             7593.0 u
+[INFO DPL-0023] HPWL delta               -2.7 %

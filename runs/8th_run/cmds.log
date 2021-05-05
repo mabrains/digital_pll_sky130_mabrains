@@ -1,0 +1,120 @@
+Wed May 05 11:01:16 UTC 2021 - Executing "python3 /openLANE_flow/scripts/extract_metal_layers.py -t /home/mariam/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd.tlef -o /openLANE_flow/designs/digital_pll/runs/8th_run/tmp/met_layers_list.txt"
+
+Wed May 05 11:01:16 UTC 2021 - Executing "/openLANE_flow/scripts/mergeLef.py -i /home/mariam/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd.tlef {/home/mariam/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef /home/mariam/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd__decap_12.lef /home/mariam/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd__fakediode_2.lef /home/mariam/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd__fill_12.lef} -o /openLANE_flow/designs/digital_pll/runs/8th_run/tmp/merged_unpadded.lef |& tee >&@stdout"
+
+Wed May 05 11:01:17 UTC 2021 - Executing "/openLANE_flow/scripts/libtrim.pl /home/mariam/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib /openLANE_flow/designs/digital_pll/runs/8th_run/tmp/trimmed.lib.exclude.list > /openLANE_flow/designs/digital_pll/runs/8th_run/tmp/trimmed.lib"
+
+Wed May 05 11:01:17 UTC 2021 - Executing "echo {openlane v0.12-2-gbb865f7} > /openLANE_flow/designs/digital_pll/runs/8th_run/OPENLANE_VERSION"
+
+Wed May 05 11:01:23 UTC 2021 - Executing "sed -E {s/^([[:space:]]+)pg_pin(.*)/\1pin\2\n\1    direction : "inout";/g} /home/mariam/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib > /openLANE_flow/designs/digital_pll/runs/8th_run/tmp/sky130_fd_sc_hd__tt_025C_1v80.no_pg.lib"
+
+Wed May 05 11:01:23 UTC 2021 - Executing "yosys -c /openLANE_flow/scripts/synth.tcl -l /openLANE_flow/designs/digital_pll/runs/8th_run/logs/synthesis/1-yosys.log |& tee >&@stdout"
+
+Wed May 05 11:01:28 UTC 2021 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openLANE_flow\/designs\/digital_pll\/runs\/8th_run\/results\/synthesis\/digital_pll.synthesis.v/} /openLANE_flow/designs/digital_pll/runs/8th_run/config.tcl"
+
+Wed May 05 11:01:28 UTC 2021 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 0/} /openLANE_flow/designs/digital_pll/runs/8th_run/config.tcl"
+
+Wed May 05 11:01:28 UTC 2021 - Executing "sed -i /defparam/d /openLANE_flow/designs/digital_pll/runs/8th_run/results/synthesis/digital_pll.synthesis.v"
+
+Wed May 05 11:01:28 UTC 2021 - Executing "sta /openLANE_flow/scripts/sta.tcl |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/synthesis/2-opensta"
+
+Wed May 05 11:01:38 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_floorplan.tcl |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/floorplan/3-verilog2def.openroad.log"
+
+Wed May 05 11:01:41 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_ioplacer.tcl |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/floorplan/4-ioPlacer.log"
+
+Wed May 05 11:01:43 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_tapcell.tcl |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/floorplan/5-tapcell.log"
+
+Wed May 05 11:01:45 UTC 2021 - Executing "bash /openLANE_flow/scripts/klayout/scrotLayout.sh /home/mariam/openlane/pdks/sky130A/libs.tech/klayout/sky130A.lyt /openLANE_flow/designs/digital_pll/runs/8th_run/results/floorplan/digital_pll.floorplan.def |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/klayout/6-klayout.scrot.log"
+
+Wed May 05 11:01:50 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_pdn.tcl |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/floorplan/7-pdn.log"
+
+Wed May 05 11:01:59 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_replace.tcl |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/placement/8-replace.log"
+
+Wed May 05 11:02:09 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_resizer.tcl |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/placement/8-resizer.log"
+
+Wed May 05 11:02:18 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_write_verilog.tcl |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/9-write_verilog.log"
+
+Wed May 05 11:02:19 UTC 2021 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openLANE_flow\/designs\/digital_pll\/runs\/8th_run\/results\/synthesis\/digital_pll.synthesis_optimized.v/} /openLANE_flow/designs/digital_pll/runs/8th_run/config.tcl"
+
+Wed May 05 11:02:19 UTC 2021 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/openLANE_flow\/designs\/digital_pll\/runs\/8th_run\/results\/synthesis\/digital_pll.synthesis.v/} /openLANE_flow/designs/digital_pll/runs/8th_run/config.tcl"
+
+Wed May 05 11:02:19 UTC 2021 - Executing "sta /openLANE_flow/scripts/sta.tcl |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/synthesis/10-opensta_post_resizer"
+
+Wed May 05 11:02:21 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_opendp.tcl |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/placement/11-opendp.log"
+
+Wed May 05 11:02:23 UTC 2021 - Executing "bash /openLANE_flow/scripts/klayout/scrotLayout.sh /home/mariam/openlane/pdks/sky130A/libs.tech/klayout/sky130A.lyt /openLANE_flow/designs/digital_pll/runs/8th_run/results/placement/digital_pll.placement.def |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/klayout/12-klayout.scrot.log"
+
+Wed May 05 11:02:36 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_groute.tcl |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/routing/13-fastroute.log"
+
+Wed May 05 11:02:46 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_fill.tcl |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/routing/14-addspacers.log"
+
+Wed May 05 11:02:48 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_write_verilog.tcl |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/15-write_verilog.log"
+
+Wed May 05 11:02:50 UTC 2021 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openLANE_flow\/designs\/digital_pll\/runs\/8th_run\/results\/synthesis\/digital_pll.synthesis_preroute.v/} /openLANE_flow/designs/digital_pll/runs/8th_run/config.tcl"
+
+Wed May 05 11:02:50 UTC 2021 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/openLANE_flow\/designs\/digital_pll\/runs\/8th_run\/results\/synthesis\/digital_pll.synthesis_optimized.v/} /openLANE_flow/designs/digital_pll/runs/8th_run/config.tcl"
+
+Wed May 05 11:02:50 UTC 2021 - Executing "envsubst < /openLANE_flow/scripts/tritonRoute.param > /openLANE_flow/designs/digital_pll/runs/8th_run/tmp/routing/16-tritonRoute.param"
+
+Wed May 05 11:02:50 UTC 2021 - Executing "TritonRoute /openLANE_flow/designs/digital_pll/runs/8th_run/tmp/routing/16-tritonRoute.param |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/routing/16-tritonRoute.log"
+
+Wed May 05 11:03:16 UTC 2021 - Executing "python3 /openLANE_flow/scripts/tr2klayout.py -i /openLANE_flow/designs/digital_pll/runs/8th_run/reports/routing/16-tritonRoute.drc -o /openLANE_flow/designs/digital_pll/runs/8th_run/reports/routing/16-tritonRoute.klayout.xml --design-name digital_pll"
+
+Wed May 05 11:03:16 UTC 2021 - Executing "bash /openLANE_flow/scripts/klayout/scrotLayout.sh /home/mariam/openlane/pdks/sky130A/libs.tech/klayout/sky130A.lyt /openLANE_flow/designs/digital_pll/runs/8th_run/results/routing/digital_pll.def |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/klayout/17-klayout.scrot.log"
+
+Wed May 05 11:03:21 UTC 2021 - Executing "python3 /openLANE_flow/scripts/spef_extractor/main.py -l /openLANE_flow/designs/digital_pll/runs/8th_run/tmp/merged_unpadded.lef -d /openLANE_flow/designs/digital_pll/runs/8th_run/results/routing/digital_pll.def -mw L -ec 1 |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/routing/18-spef_extraction.log"
+
+Wed May 05 11:03:22 UTC 2021 - Executing "sta /openLANE_flow/scripts/sta.tcl |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/synthesis/19-opensta_spef"
+
+Wed May 05 11:03:26 UTC 2021 - Executing "python3 /openLANE_flow/scripts/write_powered_def.py -d /openLANE_flow/designs/digital_pll/runs/8th_run/results/routing/digital_pll.def -l /openLANE_flow/designs/digital_pll/runs/8th_run/tmp/merged.lef --power-port VPWR --ground-port VGND --powered-netlist {} -o /openLANE_flow/designs/digital_pll/runs/8th_run/tmp/routing/20-digital_pll.powered.def |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/lvs/20-write_powered_verilog.log"
+
+Wed May 05 11:03:27 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_write_verilog.tcl |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/21-write_verilog.log"
+
+Wed May 05 11:03:33 UTC 2021 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openLANE_flow\/designs\/digital_pll\/runs\/8th_run\/results\/lvs\/digital_pll.lvs.powered.v/} /openLANE_flow/designs/digital_pll/runs/8th_run/config.tcl"
+
+Wed May 05 11:03:33 UTC 2021 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/openLANE_flow\/designs\/digital_pll\/runs\/8th_run\/results\/synthesis\/digital_pll.synthesis_preroute.v/} /openLANE_flow/designs/digital_pll/runs/8th_run/config.tcl"
+
+Wed May 05 11:03:37 UTC 2021 - Executing "magic -noconsole -dnull -rcfile /home/mariam/openlane/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/scripts/magic/mag_gds.tcl </dev/null |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/magic/22-magic.log"
+
+Wed May 05 11:03:38 UTC 2021 - Executing "bash /openLANE_flow/scripts/klayout/scrotLayout.sh /home/mariam/openlane/pdks/sky130A/libs.tech/klayout/sky130A.lyt /openLANE_flow/designs/digital_pll/runs/8th_run/results/magic/digital_pll.gds |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/klayout/23-klayout.scrot.log"
+
+Wed May 05 11:03:44 UTC 2021 - Executing "magic -noconsole -dnull -rcfile /home/mariam/openlane/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/scripts/magic/gds_pointers.tcl </dev/null |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/magic/24-magic.mag.gds_ptrs.log"
+
+Wed May 05 11:03:44 UTC 2021 - Executing "sed -i -n {/^<< properties >>/,/^<< end >>/p} /openLANE_flow/designs/digital_pll/runs/8th_run/tmp/magic/magic_gds_ptrs.mag"
+
+Wed May 05 11:03:44 UTC 2021 - Executing "magic -noconsole -dnull -rcfile /home/mariam/openlane/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/scripts/magic/lef.tcl </dev/null |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/magic/25-magic.lef.log"
+
+Wed May 05 11:03:45 UTC 2021 - Executing "magic -noconsole -dnull -rcfile /home/mariam/openlane/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/scripts/magic/maglef.tcl </dev/null |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/magic/26-magic.maglef.log"
+
+Wed May 05 11:03:48 UTC 2021 - Executing "magic -noconsole -dnull -rcfile /home/mariam/openlane/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/designs/digital_pll/runs/8th_run/tmp/magic_spice.tcl </dev/null |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/magic/27-magic_spice.log"
+
+Wed May 05 11:03:50 UTC 2021 - Executing "python3 /openLANE_flow/report_generation_wrapper.py -d /openLANE_flow/designs/digital_pll -dn digital_pll -t 8th_run -o /openLANE_flow/designs/digital_pll/runs/8th_run/reports/final_summary_report.csv -m /openLANE_flow/designs/digital_pll/runs/8th_run/reports/manufacturability_report.rpt -rs /openLANE_flow/designs/digital_pll/runs/8th_run/reports/runtime_summary_report.rpt -r /openLANE_flow/designs/digital_pll/runs/8th_run"
+
+Wed May 05 11:04:09 UTC 2021 - Executing "magic -noconsole -dnull -rcfile /home/mariam/openlane/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/designs/digital_pll/runs/8th_run/tmp/magic_gds.spice.tcl </dev/null |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/magic/28-magic_gds.spice.log"
+
+Wed May 05 11:04:15 UTC 2021 - Executing "magic -noconsole -dnull -rcfile /home/mariam/openlane/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/scripts/magic/drc.tcl </dev/null |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/magic/29-magic.drc.log"
+
+Wed May 05 11:04:19 UTC 2021 - Executing "python3 /openLANE_flow/scripts/magic_drc_to_tcl.py -i /openLANE_flow/designs/digital_pll/runs/8th_run/reports/magic/29-magic.drc -o /openLANE_flow/designs/digital_pll/runs/8th_run/reports/magic/29-magic.drc.tcl"
+
+Wed May 05 11:04:19 UTC 2021 - Executing "python3 /openLANE_flow/scripts/magic_drc_to_tr_drc.py -i /openLANE_flow/designs/digital_pll/runs/8th_run/reports/magic/29-magic.drc -o /openLANE_flow/designs/digital_pll/runs/8th_run/reports/magic/29-magic.tr.drc"
+
+Wed May 05 11:04:19 UTC 2021 - Executing "python3 /openLANE_flow/scripts/tr2klayout.py -i /openLANE_flow/designs/digital_pll/runs/8th_run/reports/magic/29-magic.tr.drc -o /openLANE_flow/designs/digital_pll/runs/8th_run/reports/magic/29-magic.drc.klayout.xml --design-name digital_pll"
+
+Wed May 05 11:04:19 UTC 2021 - Executing "python3 /openLANE_flow/scripts/magic_drc_to_rdb.py --magic_drc_in /openLANE_flow/designs/digital_pll/runs/8th_run/reports/magic/29-magic.drc --rdb_out /openLANE_flow/designs/digital_pll/runs/8th_run/reports/magic/29-magic.drc.rdb"
+
+Wed May 05 11:04:23 UTC 2021 - Executing "netgen -batch source /openLANE_flow/designs/digital_pll/runs/8th_run/tmp/lvs/setup_file.gds.lvs |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/lvs/30-lvs.gds.log"
+
+Wed May 05 11:04:30 UTC 2021 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_antenna_check.tcl |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/routing/31-or_antenna.log"
+
+Wed May 05 11:04:32 UTC 2021 - Executing "mv -f /openLANE_flow/designs/digital_pll/runs/8th_run/reports/routing/antenna.rpt /openLANE_flow/designs/digital_pll/runs/8th_run/reports/routing/32-antenna.rpt"
+
+Wed May 05 12:41:38 UTC 2021 - Executing "magic -noconsole -dnull -rcfile /home/mariam/openlane/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/scripts/magic/drc.tcl </dev/null |& tee >&@stdout /openLANE_flow/designs/digital_pll/runs/8th_run/logs/magic/33-magic.drc.log"
+
+Wed May 05 12:41:41 UTC 2021 - Executing "python3 /openLANE_flow/scripts/magic_drc_to_tcl.py -i /openLANE_flow/designs/digital_pll/runs/8th_run/reports/magic/33-magic.drc -o /openLANE_flow/designs/digital_pll/runs/8th_run/reports/magic/33-magic.drc.tcl"
+
+Wed May 05 12:41:41 UTC 2021 - Executing "python3 /openLANE_flow/scripts/magic_drc_to_tr_drc.py -i /openLANE_flow/designs/digital_pll/runs/8th_run/reports/magic/33-magic.drc -o /openLANE_flow/designs/digital_pll/runs/8th_run/reports/magic/33-magic.tr.drc"
+
+Wed May 05 12:41:41 UTC 2021 - Executing "python3 /openLANE_flow/scripts/tr2klayout.py -i /openLANE_flow/designs/digital_pll/runs/8th_run/reports/magic/33-magic.tr.drc -o /openLANE_flow/designs/digital_pll/runs/8th_run/reports/magic/33-magic.drc.klayout.xml --design-name digital_pll"
+
+Wed May 05 12:41:42 UTC 2021 - Executing "python3 /openLANE_flow/scripts/magic_drc_to_rdb.py --magic_drc_in /openLANE_flow/designs/digital_pll/runs/8th_run/reports/magic/33-magic.drc --rdb_out /openLANE_flow/designs/digital_pll/runs/8th_run/reports/magic/33-magic.drc.rdb"
+

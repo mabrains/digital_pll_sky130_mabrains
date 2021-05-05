@@ -449,7 +449,7 @@ MACRO digital_pll
   END VGND
   OBS
       LAYER li1 ;
-        RECT 5.520 10.795 109.020 114.325 ;
+        RECT 5.520 10.795 109.795 114.325 ;
       LAYER met1 ;
         RECT 2.370 10.640 110.790 114.480 ;
       LAYER met2 ;

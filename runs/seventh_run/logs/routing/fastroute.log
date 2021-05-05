@@ -1,0 +1,594 @@
+OpenROAD 0.9.0 1415572a73
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+Warning: /home/mariam/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib line 31, default_operating_condition tt_025C_1v80 not found.
+Notice 0: Reading LEF file:  /openLANE_flow/designs/digital_pll/runs/seventh_run/tmp/merged_unpadded.lef
+Notice 0:     Created 13 technology layers
+Notice 0:     Created 25 technology vias
+Notice 0:     Created 440 library cells
+Notice 0: Finished LEF file:  /openLANE_flow/designs/digital_pll/runs/seventh_run/tmp/merged_unpadded.lef
+Notice 0: 
+Reading DEF file: /openLANE_flow/designs/digital_pll/runs/seventh_run/results/placement/digital_pll.placement.def
+Notice 0: Design: digital_pll
+Notice 0:     Created 47 pins.
+Notice 0:     Created 547 components and 3167 component-terminals.
+Notice 0:     Created 2 special nets and 0 connections.
+Notice 0:     Created 391 nets and 1188 connections.
+Notice 0: Finished DEF file: /openLANE_flow/designs/digital_pll/runs/seventh_run/results/placement/digital_pll.placement.def
+Min routing layer: 2
+Max routing layer: 6
+Global adjustment: 0.0
+Unidirectional routing: true
+Grid origin: (0, 0)
+[INFO GRT-0004] #DB Obstructions: 0
+[INFO GRT-0005] #DB Obstacles: 13455
+[INFO GRT-0006] #DB Macros: 0
+[INFO GRT-0017] Found 0 clock nets
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 26
+[INFO GRT-0018] Processing 9940 obstacles on layer 1
+[INFO GRT-0019] Processing 1673 obstacles on layer 2
+[INFO GRT-0022] Processing 5 obstacles on layer 5
+[INFO GRT-0023] Processing 5 obstacles on layer 6
+[INFO GRT-0020] Reducing resources of layer 1 by 99%
+[INFO] WIRELEN : 1049, WIRELEN1 : 0
+[INFO] NumSeg  : 602
+[INFO] NumShift: 0
+First L Route
+[INFO] WIRELEN : 1049, WIRELEN1 : 1049
+[INFO] NumSeg  : 604
+[INFO] NumShift: 11
+[Overflow Report] Total hCap    : 5874
+[Overflow Report] Total vCap    : 4750
+[Overflow Report] Total Usage   : 1049
+[Overflow Report] Max H Overflow: 0
+[Overflow Report] Max V Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Num Overflow e: 0
+[Overflow Report] H   Overflow  : 0
+[Overflow Report] V   Overflow  : 0
+[Overflow Report] Final Overflow: 0
+
+Second L Route
+[Overflow Report] Total hCap    : 5874
+[Overflow Report] Total vCap    : 4750
+[Overflow Report] Total Usage   : 1049
+[Overflow Report] Max H Overflow: 0
+[Overflow Report] Max V Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Num Overflow e: 0
+[Overflow Report] H   Overflow  : 0
+[Overflow Report] V   Overflow  : 0
+[Overflow Report] Final Overflow: 0
+
+First Z Route
+[Overflow Report] Total hCap    : 5874
+[Overflow Report] Total vCap    : 4750
+[Overflow Report] Total Usage   : 1049
+[Overflow Report] Max H Overflow: 0
+[Overflow Report] Max V Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Num Overflow e: 0
+[Overflow Report] H   Overflow  : 0
+[Overflow Report] V   Overflow  : 0
+[Overflow Report] Final Overflow: 0
+
+[INFO] LV routing round 0, enlarge 10 
+[INFO] 10 threshold, 10 expand
+[Overflow Report] total Usage   : 1049
+[Overflow Report] Max H Overflow: 0
+[Overflow Report] Max V Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Num Overflow e: 0
+[Overflow Report] H   Overflow  : 0
+[Overflow Report] V   Overflow  : 0
+[Overflow Report] Final Overflow: 0
+
+[INFO] LV routing round 1, enlarge 15 
+[INFO] 5 threshold, 15 expand
+[Overflow Report] total Usage   : 1049
+[Overflow Report] Max H Overflow: 0
+[Overflow Report] Max V Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Num Overflow e: 0
+[Overflow Report] H   Overflow  : 0
+[Overflow Report] V   Overflow  : 0
+[Overflow Report] Final Overflow: 0
+
+[INFO] LV routing round 2, enlarge 20 
+[INFO] 1 threshold, 20 expand
+[Overflow Report] total Usage   : 1049
+[Overflow Report] Max H Overflow: 0
+[Overflow Report] Max V Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Num Overflow e: 0
+[Overflow Report] H   Overflow  : 0
+[Overflow Report] V   Overflow  : 0
+[Overflow Report] Final Overflow: 0
+
+Usage checked
+Maze routing finished
+[INFO] P3 runtime: 0.000000 sec
+[INFO] Final 2D results: 
+[Overflow Report] total Usage   : 1049
+[Overflow Report] Max H Overflow: 0
+[Overflow Report] Max V Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Num Overflow e: 0
+[Overflow Report] H   Overflow  : 0
+[Overflow Report] V   Overflow  : 0
+[Overflow Report] Final Overflow: 0
+
+Layer Assignment Begins
+Layer assignment finished
+[INFO] 2D + Layer Assignment Runtime: 4.800000 sec
+Post Processing Begins 
+Post Processsing finished
+ Starting via filling
+[INFO] Via related to pin nodes 1350
+[INFO] Via related stiner nodes 34
+Via filling finished
+
+Final usage/overflow report: 
+[INFO] Usage per layer: 
+    Layer 1 usage: 0
+    Layer 2 usage: 531
+    Layer 3 usage: 523
+    Layer 4 usage: 0
+    Layer 5 usage: 0
+    Layer 6 usage: 0
+
+[INFO] Capacity per layer: 
+    Layer 1 capacity: 0
+    Layer 2 capacity: 3391
+    Layer 3 capacity: 3270
+    Layer 4 capacity: 2080
+    Layer 5 capacity: 1480
+    Layer 6 capacity: 403
+
+[INFO] Use percentage per layer: 
+    Layer 1 use percentage: 0.0%
+    Layer 2 use percentage: 15.66%
+    Layer 3 use percentage: 15.99%
+    Layer 4 use percentage: 0.00%
+    Layer 5 use percentage: 0.00%
+    Layer 6 use percentage: 0.00%
+
+[INFO] Overflow per layer: 
+    Layer 1 overflow: 0
+    Layer 2 overflow: 0
+    Layer 3 overflow: 0
+    Layer 4 overflow: 0
+    Layer 5 overflow: 0
+    Layer 6 overflow: 0
+
+[Overflow Report] Total Usage   : 1054
+[Overflow Report] Total Capacity: 10624
+[Overflow Report] Max H Overflow: 0
+[Overflow Report] Max V Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] H   Overflow  : 0
+[Overflow Report] V   Overflow  : 0
+[Overflow Report] Final Overflow: 0
+
+[INFO] Final usage          : 1054
+[INFO] Final number of vias : 1458
+[INFO] Final usage 3D       : 5428
+[INFO GRT-0018] Total wirelength: 12702 um
+Repairing antennas...
+[WARNING GRT-0025] No OR_DEFAULT vias defined
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 3 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 3 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 3 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 2 T shapes.
+Notice 0: Split top of 2 T shapes.
+Notice 0: Split top of 3 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 2 T shapes.
+Notice 0: Split top of 2 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 2 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 3 T shapes.
+Notice 0: Split top of 2 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 3 T shapes.
+Notice 0: Split top of 2 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 3 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
+[INFO GRT-0012] #Antenna violations: 0
+[INFO GRT-0014] Num routed nets: 387
+Warning: /home/mariam/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib line 32, default_operating_condition ss_100C_1v60 not found.
+Warning: /home/mariam/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib line 31, default_operating_condition ff_n40C_1v95 not found.
+create_clock [get_ports $::env(CLOCK_PORT)]  -name $::env(CLOCK_PORT)  -period $::env(CLOCK_PERIOD)
+[WARNING STA-0337] port 'w' not found.
+set input_delay_value [expr $::env(CLOCK_PERIOD) * $::env(IO_PCT)]
+set output_delay_value [expr $::env(CLOCK_PERIOD) * $::env(IO_PCT)]
+puts "\[INFO\]: Setting output delay to: $output_delay_value"
+[INFO]: Setting output delay to: 5.0
+puts "\[INFO\]: Setting input delay to: $input_delay_value"
+[INFO]: Setting input delay to: 5.0
+set_max_fanout $::env(SYNTH_MAX_FANOUT) [current_design]
+set clk_indx [lsearch [all_inputs] [get_port $::env(CLOCK_PORT)]]
+[WARNING STA-0337] port 'w' not found.
+#set rst_indx [lsearch [all_inputs] [get_port resetn]]
+set all_inputs_wo_clk [lreplace [all_inputs] $clk_indx $clk_indx]
+#set all_inputs_wo_clk_rst [lreplace $all_inputs_wo_clk $rst_indx $rst_indx]
+set all_inputs_wo_clk_rst $all_inputs_wo_clk
+# correct resetn
+set_input_delay $input_delay_value  -clock [get_clocks $::env(CLOCK_PORT)] $all_inputs_wo_clk_rst
+#set_input_delay 0.0 -clock [get_clocks $::env(CLOCK_PORT)] {resetn}
+set_output_delay $output_delay_value  -clock [get_clocks $::env(CLOCK_PORT)] [all_outputs]
+# TODO set this as parameter
+set_driving_cell -lib_cell $::env(SYNTH_DRIVING_CELL) -pin $::env(SYNTH_DRIVING_CELL_PIN) [all_inputs]
+set cap_load [expr $::env(SYNTH_CAP_LOAD) / 1000.0]
+puts "\[INFO\]: Setting load to: $cap_load"
+[INFO]: Setting load to: 0.01765
+set_load  $cap_load [all_outputs]
+No paths found.
+Startpoint: idiv16 (rising edge-triggered flip-flop)
+Endpoint: clockd[3] (output port clocked by w)
+Path Group: w
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.07    0.00    0.00 ^ idiv16/CLK (sky130_fd_sc_hd__dfrbp_1)
+                  0.04    0.27    0.27 v idiv16/Q_N (sky130_fd_sc_hd__dfrbp_1)
+     3    0.01                           net43 (net)
+                  0.04    0.00    0.27 v output43/A (sky130_fd_sc_hd__clkbuf_2)
+                  0.06    0.10    0.37 v output43/X (sky130_fd_sc_hd__clkbuf_2)
+     1    0.02                           clockd[3] (net)
+                  0.06    0.01    0.38 v clockd[3] (out)
+                                  0.38   data arrival time
+
+                  0.00    0.00    0.00   clock w (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.00    0.00   clock reconvergence pessimism
+                         -5.00   -5.00   output external delay
+                                 -5.00   data required time
+-----------------------------------------------------------------------------
+                                 -5.00   data required time
+                                 -0.38   data arrival time
+-----------------------------------------------------------------------------
+                                  5.38   slack (MET)
+
+
+Startpoint: dco (input port clocked by w)
+Endpoint: clockc (output port clocked by w)
+Path Group: w
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock w (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          5.00    5.00 ^ input external delay
+                  0.03    0.01    5.01 ^ dco (in)
+     1    0.01                           dco (net)
+                  0.03    0.00    5.01 ^ input1/A (sky130_fd_sc_hd__buf_6)
+                  0.19    0.24    5.26 ^ input1/X (sky130_fd_sc_hd__buf_6)
+    12    0.06                           net1 (net)
+                  0.20    0.02    5.28 ^ _376_/S (sky130_fd_sc_hd__mux2_1)
+                  0.15    0.80    6.08 v _376_/X (sky130_fd_sc_hd__mux2_1)
+     2    0.01                           ringosc.dstage[0].id.trim[0] (net)
+                  0.15    0.00    6.08 v ringosc.dstage[0].id.delayen0/TE (sky130_fd_sc_hd__einvp_1)
+                  0.00    0.25    6.33 v ringosc.dstage[0].id.delayen0/Z (sky130_fd_sc_hd__einvp_1)
+     1    0.01                           ringosc.dstage[0].id.out (net)
+                  0.00    0.00    6.33 v ringosc.dstage[1].id.delaybuf0/A (sky130_fd_sc_hd__clkbuf_2)
+                  0.10    0.20    6.53 v ringosc.dstage[1].id.delaybuf0/X (sky130_fd_sc_hd__clkbuf_2)
+     3    0.01                           ringosc.dstage[1].id.ts (net)
+                  0.10    0.00    6.53 v ringosc.dstage[1].id.delaybuf1/A (sky130_fd_sc_hd__clkbuf_1)
+                  0.06    0.18    6.71 v ringosc.dstage[1].id.delaybuf1/X (sky130_fd_sc_hd__clkbuf_1)
+     1    0.00                           ringosc.dstage[1].id.d0 (net)
+                  0.06    0.00    6.71 v ringosc.dstage[1].id.delayen1/A (sky130_fd_sc_hd__einvp_1)
+                  0.00    0.03    6.75 ^ ringosc.dstage[1].id.delayen1/Z (sky130_fd_sc_hd__einvp_1)
+     1    0.01                           ringosc.dstage[1].id.d1 (net)
+                  0.00    0.00    6.75 ^ ringosc.dstage[1].id.delayint0/A (sky130_fd_sc_hd__clkinv_1)
+                  0.06    0.07    6.82 v ringosc.dstage[1].id.delayint0/Y (sky130_fd_sc_hd__clkinv_1)
+     1    0.00                           ringosc.dstage[1].id.d2 (net)
+                  0.06    0.00    6.82 v ringosc.dstage[1].id.delayen0/A (sky130_fd_sc_hd__einvp_1)
+                  0.00    0.03    6.85 ^ ringosc.dstage[1].id.delayen0/Z (sky130_fd_sc_hd__einvp_1)
+     1    0.01                           ringosc.dstage[1].id.out (net)
+                  0.00    0.00    6.86 ^ ringosc.dstage[2].id.delaybuf0/A (sky130_fd_sc_hd__clkbuf_2)
+                  0.14    0.21    7.06 ^ ringosc.dstage[2].id.delaybuf0/X (sky130_fd_sc_hd__clkbuf_2)
+     3    0.01                           ringosc.dstage[2].id.ts (net)
+                  0.14    0.01    7.07 ^ ringosc.dstage[2].id.delaybuf1/A (sky130_fd_sc_hd__clkbuf_1)
+                  0.08    0.19    7.26 ^ ringosc.dstage[2].id.delaybuf1/X (sky130_fd_sc_hd__clkbuf_1)
+     1    0.00                           ringosc.dstage[2].id.d0 (net)
+                  0.08    0.00    7.26 ^ ringosc.dstage[2].id.delayen1/A (sky130_fd_sc_hd__einvp_1)
+                  0.00    0.04    7.30 v ringosc.dstage[2].id.delayen1/Z (sky130_fd_sc_hd__einvp_1)
+     1    0.01                           ringosc.dstage[2].id.d1 (net)
+                  0.00    0.00    7.30 v ringosc.dstage[2].id.delayint0/A (sky130_fd_sc_hd__clkinv_1)
+                  0.04    0.04    7.34 ^ ringosc.dstage[2].id.delayint0/Y (sky130_fd_sc_hd__clkinv_1)
+     1    0.00                           ringosc.dstage[2].id.d2 (net)
+                  0.04    0.00    7.34 ^ ringosc.dstage[2].id.delayen0/A (sky130_fd_sc_hd__einvp_1)
+                  0.00    0.03    7.37 v ringosc.dstage[2].id.delayen0/Z (sky130_fd_sc_hd__einvp_1)
+     1    0.01                           ringosc.dstage[2].id.out (net)
+                  0.00    0.00    7.37 v ringosc.dstage[3].id.delaybuf0/A (sky130_fd_sc_hd__clkbuf_2)
+                  0.11    0.20    7.57 v ringosc.dstage[3].id.delaybuf0/X (sky130_fd_sc_hd__clkbuf_2)
+     3    0.01                           ringosc.dstage[3].id.ts (net)
+                  0.11    0.01    7.57 v ringosc.dstage[3].id.delaybuf1/A (sky130_fd_sc_hd__clkbuf_1)
+                  0.06    0.19    7.76 v ringosc.dstage[3].id.delaybuf1/X (sky130_fd_sc_hd__clkbuf_1)
+     1    0.00                           ringosc.dstage[3].id.d0 (net)
+                  0.06    0.00    7.76 v ringosc.dstage[3].id.delayen1/A (sky130_fd_sc_hd__einvp_1)
+                  0.00    0.03    7.80 ^ ringosc.dstage[3].id.delayen1/Z (sky130_fd_sc_hd__einvp_1)
+     1    0.01                           ringosc.dstage[3].id.d1 (net)
+                  0.00    0.00    7.80 ^ ringosc.dstage[3].id.delayint0/A (sky130_fd_sc_hd__clkinv_1)
+                  0.06    0.07    7.87 v ringosc.dstage[3].id.delayint0/Y (sky130_fd_sc_hd__clkinv_1)
+     1    0.00                           ringosc.dstage[3].id.d2 (net)
+                  0.06    0.00    7.87 v ringosc.dstage[3].id.delayen0/A (sky130_fd_sc_hd__einvp_1)
+                  0.00    0.03    7.90 ^ ringosc.dstage[3].id.delayen0/Z (sky130_fd_sc_hd__einvp_1)
+     1    0.01                           ringosc.dstage[3].id.out (net)
+                  0.00    0.00    7.90 ^ ringosc.dstage[4].id.delaybuf0/A (sky130_fd_sc_hd__clkbuf_2)
+                  0.14    0.21    8.11 ^ ringosc.dstage[4].id.delaybuf0/X (sky130_fd_sc_hd__clkbuf_2)
+     3    0.02                           ringosc.dstage[4].id.ts (net)
+                  0.14    0.01    8.12 ^ ringosc.dstage[4].id.delaybuf1/A (sky130_fd_sc_hd__clkbuf_1)
+                  0.08    0.18    8.30 ^ ringosc.dstage[4].id.delaybuf1/X (sky130_fd_sc_hd__clkbuf_1)
+     1    0.00                           ringosc.dstage[4].id.d0 (net)
+                  0.08    0.00    8.30 ^ ringosc.dstage[4].id.delayen1/A (sky130_fd_sc_hd__einvp_1)
+                  0.00    0.04    8.34 v ringosc.dstage[4].id.delayen1/Z (sky130_fd_sc_hd__einvp_1)
+     1    0.01                           ringosc.dstage[4].id.d1 (net)
+                  0.00    0.00    8.34 v ringosc.dstage[4].id.delayint0/A (sky130_fd_sc_hd__clkinv_1)
+                  0.04    0.04    8.38 ^ ringosc.dstage[4].id.delayint0/Y (sky130_fd_sc_hd__clkinv_1)
+     1    0.00                           ringosc.dstage[4].id.d2 (net)
+                  0.04    0.00    8.39 ^ ringosc.dstage[4].id.delayen0/A (sky130_fd_sc_hd__einvp_1)
+                  0.00    0.03    8.41 v ringosc.dstage[4].id.delayen0/Z (sky130_fd_sc_hd__einvp_1)
+     1    0.01                           ringosc.dstage[4].id.out (net)
+                  0.00    0.00    8.41 v ringosc.dstage[5].id.delaybuf0/A (sky130_fd_sc_hd__clkbuf_2)
+                  0.12    0.21    8.63 v ringosc.dstage[5].id.delaybuf0/X (sky130_fd_sc_hd__clkbuf_2)
+     3    0.02                           ringosc.dstage[5].id.ts (net)
+                  0.12    0.00    8.63 v ringosc.dstage[5].id.delaybuf1/A (sky130_fd_sc_hd__clkbuf_1)
+                  0.05    0.18    8.81 v ringosc.dstage[5].id.delaybuf1/X (sky130_fd_sc_hd__clkbuf_1)
+     1    0.00                           ringosc.dstage[5].id.d0 (net)
+                  0.05    0.00    8.81 v ringosc.dstage[5].id.delayen1/A (sky130_fd_sc_hd__einvp_1)
+                  0.00    0.03    8.85 ^ ringosc.dstage[5].id.delayen1/Z (sky130_fd_sc_hd__einvp_1)
+     1    0.01                           ringosc.dstage[5].id.d1 (net)
+                  0.00    0.00    8.85 ^ ringosc.dstage[5].id.delayint0/A (sky130_fd_sc_hd__clkinv_1)
+                  0.10    0.10    8.95 v ringosc.dstage[5].id.delayint0/Y (sky130_fd_sc_hd__clkinv_1)
+     1    0.01                           ringosc.dstage[5].id.d2 (net)
+                  0.10    0.00    8.95 v ringosc.dstage[5].id.delayen0/A (sky130_fd_sc_hd__einvp_2)
+                  0.00    0.04    8.99 ^ ringosc.dstage[5].id.delayen0/Z (sky130_fd_sc_hd__einvp_2)
+     2    0.01                           ringosc.dstage[5].id.out (net)
+                  0.00    0.01    9.00 ^ ringosc.dstage[6].id.delaybuf0/A (sky130_fd_sc_hd__clkbuf_2)
+                  0.14    0.21    9.21 ^ ringosc.dstage[6].id.delaybuf0/X (sky130_fd_sc_hd__clkbuf_2)
+     3    0.01                           ringosc.dstage[6].id.ts (net)
+                  0.14    0.01    9.21 ^ ringosc.dstage[6].id.delaybuf1/A (sky130_fd_sc_hd__clkbuf_1)
+                  0.08    0.18    9.39 ^ ringosc.dstage[6].id.delaybuf1/X (sky130_fd_sc_hd__clkbuf_1)
+     1    0.00                           ringosc.dstage[6].id.d0 (net)
+                  0.08    0.00    9.39 ^ ringosc.dstage[6].id.delayen1/A (sky130_fd_sc_hd__einvp_1)
+                  0.00    0.04    9.44 v ringosc.dstage[6].id.delayen1/Z (sky130_fd_sc_hd__einvp_1)
+     1    0.01                           ringosc.dstage[6].id.d1 (net)
+                  0.00    0.00    9.44 v ringosc.dstage[6].id.delayint0/A (sky130_fd_sc_hd__clkinv_1)
+                  0.04    0.04    9.48 ^ ringosc.dstage[6].id.delayint0/Y (sky130_fd_sc_hd__clkinv_1)
+     1    0.00                           ringosc.dstage[6].id.d2 (net)
+                  0.04    0.00    9.48 ^ ringosc.dstage[6].id.delayen0/A (sky130_fd_sc_hd__einvp_1)
+                  0.00    0.03    9.51 v ringosc.dstage[6].id.delayen0/Z (sky130_fd_sc_hd__einvp_1)
+     1    0.01                           ringosc.dstage[6].id.out (net)
+                  0.00    0.00    9.51 v ringosc.dstage[7].id.delaybuf0/A (sky130_fd_sc_hd__clkbuf_2)
+                  0.11    0.20    9.71 v ringosc.dstage[7].id.delaybuf0/X (sky130_fd_sc_hd__clkbuf_2)
+     3    0.01                           ringosc.dstage[7].id.ts (net)
+                  0.11    0.01    9.71 v ringosc.dstage[7].id.delaybuf1/A (sky130_fd_sc_hd__clkbuf_1)
+                  0.05    0.17    9.89 v ringosc.dstage[7].id.delaybuf1/X (sky130_fd_sc_hd__clkbuf_1)
+     1    0.00                           ringosc.dstage[7].id.d0 (net)
+                  0.05    0.00    9.89 v ringosc.dstage[7].id.delayen1/A (sky130_fd_sc_hd__einvp_1)
+                  0.00    0.03    9.92 ^ ringosc.dstage[7].id.delayen1/Z (sky130_fd_sc_hd__einvp_1)
+     1    0.01                           ringosc.dstage[7].id.d1 (net)
+                  0.00    0.00    9.92 ^ ringosc.dstage[7].id.delayint0/A (sky130_fd_sc_hd__clkinv_1)
+                  0.10    0.10   10.01 v ringosc.dstage[7].id.delayint0/Y (sky130_fd_sc_hd__clkinv_1)
+     1    0.01                           ringosc.dstage[7].id.d2 (net)
+                  0.10    0.00   10.02 v ringosc.dstage[7].id.delayen0/A (sky130_fd_sc_hd__einvp_2)
+                  0.00    0.04   10.06 ^ ringosc.dstage[7].id.delayen0/Z (sky130_fd_sc_hd__einvp_2)
+     1    0.01                           ringosc.dstage[7].id.out (net)
+                  0.00    0.00   10.07 ^ ringosc.dstage[8].id.delaybuf0/A (sky130_fd_sc_hd__clkbuf_2)
+                  0.14    0.21   10.27 ^ ringosc.dstage[8].id.delaybuf0/X (sky130_fd_sc_hd__clkbuf_2)
+     3    0.01                           ringosc.dstage[8].id.ts (net)
+                  0.14    0.00   10.28 ^ ringosc.dstage[8].id.delaybuf1/A (sky130_fd_sc_hd__clkbuf_1)
+                  0.10    0.19   10.47 ^ ringosc.dstage[8].id.delaybuf1/X (sky130_fd_sc_hd__clkbuf_1)
+     1    0.00                           ringosc.dstage[8].id.d0 (net)
+                  0.10    0.00   10.47 ^ ringosc.dstage[8].id.delayen1/A (sky130_fd_sc_hd__einvp_1)
+                  0.00    0.04   10.52 v ringosc.dstage[8].id.delayen1/Z (sky130_fd_sc_hd__einvp_1)
+     1    0.01                           ringosc.dstage[8].id.d1 (net)
+                  0.00    0.00   10.52 v ringosc.dstage[8].id.delayint0/A (sky130_fd_sc_hd__clkinv_1)
+                  0.04    0.04   10.56 ^ ringosc.dstage[8].id.delayint0/Y (sky130_fd_sc_hd__clkinv_1)
+     1    0.00                           ringosc.dstage[8].id.d2 (net)
+                  0.04    0.00   10.56 ^ ringosc.dstage[8].id.delayen0/A (sky130_fd_sc_hd__einvp_1)
+                  0.00    0.03   10.59 v ringosc.dstage[8].id.delayen0/Z (sky130_fd_sc_hd__einvp_1)
+     1    0.01                           ringosc.dstage[8].id.out (net)
+                  0.00    0.00   10.59 v ringosc.dstage[9].id.delaybuf0/A (sky130_fd_sc_hd__clkbuf_2)
+                  0.13    0.22   10.81 v ringosc.dstage[9].id.delaybuf0/X (sky130_fd_sc_hd__clkbuf_2)
+     3    0.02                           ringosc.dstage[9].id.ts (net)
+                  0.13    0.00   10.81 v ringosc.dstage[9].id.delaybuf1/A (sky130_fd_sc_hd__clkbuf_1)
+                  0.06    0.19   11.00 v ringosc.dstage[9].id.delaybuf1/X (sky130_fd_sc_hd__clkbuf_1)
+     1    0.00                           ringosc.dstage[9].id.d0 (net)
+                  0.06    0.00   11.00 v ringosc.dstage[9].id.delayen1/A (sky130_fd_sc_hd__einvp_1)
+                  0.00    0.03   11.04 ^ ringosc.dstage[9].id.delayen1/Z (sky130_fd_sc_hd__einvp_1)
+     1    0.01                           ringosc.dstage[9].id.d1 (net)
+                  0.00    0.00   11.04 ^ ringosc.dstage[9].id.delayint0/A (sky130_fd_sc_hd__clkinv_1)
+                  0.07    0.07   11.11 v ringosc.dstage[9].id.delayint0/Y (sky130_fd_sc_hd__clkinv_1)
+     1    0.00                           ringosc.dstage[9].id.d2 (net)
+                  0.07    0.00   11.12 v ringosc.dstage[9].id.delayen0/A (sky130_fd_sc_hd__einvp_1)
+                  0.00    0.04   11.15 ^ ringosc.dstage[9].id.delayen0/Z (sky130_fd_sc_hd__einvp_1)
+     1    0.01                           ringosc.dstage[10].id.in (net)
+                  0.00    0.00   11.15 ^ ringosc.dstage[10].id.delaybuf0/A (sky130_fd_sc_hd__clkbuf_2)
+                  0.14    0.21   11.36 ^ ringosc.dstage[10].id.delaybuf0/X (sky130_fd_sc_hd__clkbuf_2)
+     3    0.01                           ringosc.dstage[10].id.ts (net)
+                  0.14    0.00   11.37 ^ ringosc.dstage[10].id.delaybuf1/A (sky130_fd_sc_hd__clkbuf_1)
+                  0.08    0.19   11.55 ^ ringosc.dstage[10].id.delaybuf1/X (sky130_fd_sc_hd__clkbuf_1)
+     1    0.00                           ringosc.dstage[10].id.d0 (net)
+                  0.08    0.00   11.55 ^ ringosc.dstage[10].id.delayen1/A (sky130_fd_sc_hd__einvp_1)
+                  0.00    0.04   11.60 v ringosc.dstage[10].id.delayen1/Z (sky130_fd_sc_hd__einvp_1)
+     1    0.01                           ringosc.dstage[10].id.d1 (net)
+                  0.00    0.00   11.60 v ringosc.dstage[10].id.delayint0/A (sky130_fd_sc_hd__clkinv_1)
+                  0.04    0.04   11.64 ^ ringosc.dstage[10].id.delayint0/Y (sky130_fd_sc_hd__clkinv_1)
+     1    0.00                           ringosc.dstage[10].id.d2 (net)
+                  0.04    0.00   11.64 ^ ringosc.dstage[10].id.delayen0/A (sky130_fd_sc_hd__einvp_1)
+                  0.00    0.03   11.67 v ringosc.dstage[10].id.delayen0/Z (sky130_fd_sc_hd__einvp_1)
+     1    0.01                           ringosc.dstage[10].id.out (net)
+                  0.00    0.00   11.67 v ringosc.dstage[11].id.delaybuf0/A (sky130_fd_sc_hd__clkbuf_2)
+                  0.13    0.22   11.89 v ringosc.dstage[11].id.delaybuf0/X (sky130_fd_sc_hd__clkbuf_2)
+     3    0.02                           ringosc.dstage[11].id.ts (net)
+                  0.13    0.00   11.89 v ringosc.dstage[11].id.delaybuf1/A (sky130_fd_sc_hd__clkbuf_1)
+                  0.05    0.19   12.08 v ringosc.dstage[11].id.delaybuf1/X (sky130_fd_sc_hd__clkbuf_1)
+     1    0.00                           ringosc.dstage[11].id.d0 (net)
+                  0.05    0.00   12.09 v ringosc.dstage[11].id.delayen1/A (sky130_fd_sc_hd__einvp_1)
+                  0.00    0.03   12.12 ^ ringosc.dstage[11].id.delayen1/Z (sky130_fd_sc_hd__einvp_1)
+     1    0.01                           ringosc.dstage[11].id.d1 (net)
+                  0.00    0.00   12.12 ^ ringosc.dstage[11].id.delayint0/A (sky130_fd_sc_hd__clkinv_1)
+                  0.15    0.14   12.26 v ringosc.dstage[11].id.delayint0/Y (sky130_fd_sc_hd__clkinv_1)
+     1    0.01                           ringosc.dstage[11].id.d2 (net)
+                  0.15    0.01   12.27 v ringosc.dstage[11].id.delayen0/A (sky130_fd_sc_hd__einvp_4)
+                  0.00    0.06   12.33 ^ ringosc.dstage[11].id.delayen0/Z (sky130_fd_sc_hd__einvp_4)
+     3    0.03                           ringosc.dstage[11].id.out (net)
+                  0.00    0.01   12.33 ^ ringosc.iss.delaybuf0/A (sky130_fd_sc_hd__clkbuf_1)
+                  0.09    0.13   12.46 ^ ringosc.iss.delaybuf0/X (sky130_fd_sc_hd__clkbuf_1)
+     1    0.00                           ringosc.iss.d0 (net)
+                  0.09    0.00   12.46 ^ ringosc.iss.delayen1/A (sky130_fd_sc_hd__einvp_1)
+                  0.00    0.04   12.51 v ringosc.iss.delayen1/Z (sky130_fd_sc_hd__einvp_1)
+     1    0.01                           ringosc.iss.d1 (net)
+                  0.00    0.00   12.51 v ringosc.iss.delayint0/A (sky130_fd_sc_hd__clkinv_1)
+                  0.10    0.08   12.59 ^ ringosc.iss.delayint0/Y (sky130_fd_sc_hd__clkinv_1)
+     1    0.01                           ringosc.iss.d2 (net)
+                  0.10    0.01   12.59 ^ ringosc.iss.delayen0/A (sky130_fd_sc_hd__einvp_4)
+                  0.00    0.04   12.63 v ringosc.iss.delayen0/Z (sky130_fd_sc_hd__einvp_4)
+     2    0.02                           ringosc.dstage[0].id.in (net)
+                  0.00    0.00   12.63 v ringosc.ibufp00/A (sky130_fd_sc_hd__clkinv_2)
+                  0.13    0.10   12.73 ^ ringosc.ibufp00/Y (sky130_fd_sc_hd__clkinv_2)
+     1    0.02                           ringosc.c[0] (net)
+                  0.13    0.01   12.74 ^ ringosc.ibufp01/A (sky130_fd_sc_hd__clkinv_8)
+                  0.15    0.15   12.89 v ringosc.ibufp01/Y (sky130_fd_sc_hd__clkinv_8)
+    25    0.07                           pll_control.clock (net)
+                  0.16    0.04   12.93 v _353_/A1 (sky130_fd_sc_hd__mux2_1)
+                  0.17    0.77   13.70 v _353_/X (sky130_fd_sc_hd__mux2_1)
+     1    0.01                           net39 (net)
+                  0.17    0.00   13.70 v output39/A (sky130_fd_sc_hd__clkbuf_2)
+                  0.15    0.31   14.01 v output39/X (sky130_fd_sc_hd__clkbuf_2)
+     1    0.02                           clockc (net)
+                  0.15    0.01   14.01 v clockc (out)
+                                 14.01   data arrival time
+
+                  0.00   25.00   25.00   clock w (rise edge)
+                          0.00   25.00   clock network delay (ideal)
+                          0.00   25.00   clock reconvergence pessimism
+                         -5.00   20.00   output external delay
+                                 20.00   data required time
+-----------------------------------------------------------------------------
+                                 20.00   data required time
+                                -14.01   data arrival time
+-----------------------------------------------------------------------------
+                                  5.99   slack (MET)
+
+
+No paths found.
+wns 0.00
+tns 0.00
