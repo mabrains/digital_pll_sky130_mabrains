@@ -20,12 +20,12 @@
 `include "digital_pll_controller.v"
 `include "ring_osc2x13.v"
 
-module digital_pll(
+module dpll(
 `ifdef USE_POWER_PINS
     VPWR,
     VGND,
 `endif
-    resetb, enable, osc, clockp, div, dco, ext_trim);
+    resetb, enable, osc, clockp, div);
 
 `ifdef USE_POWER_PINS
     input VPWR;
