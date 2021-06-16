@@ -1,4 +1,4 @@
-// Copyright 2020 Efabless Corporation
+// SPDX-FileCopyrightText: 2020 Efabless Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -11,7 +11,9 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+// SPDX-License-Identifier: Apache-2.0
 
+`default_nettype none
 // Tunable ring oscillator---synthesizable (physical) version.
 //
 // NOTE:  This netlist cannot be simulated correctly due to lack
@@ -22,7 +24,7 @@ module delay_stage(in, trim, out);
     input [1:0] trim;
     output out;
 
-    wire d0, d1, d2;
+    wire d0, d1, d2, ts;
 
     sky130_fd_sc_hd__clkbuf_2 delaybuf0 (
 	.A(in),
@@ -145,8 +147,60 @@ module ring_osc2x13(reset, trim, clockp);
     input [25:0] trim;
     output[1:0] clockp;
 
-    wire [12:0] d;
+`ifdef FUNCTIONAL	// i.e., behavioral model below
+
+    reg [1:0] clockp;
+    reg hiclock;
+    integer i;
+    real delay;
+    wire [5:0] bcount;
+
+    assign bcount = trim[0] + trim[1] + trim[2]
+		+ trim[3] + trim[4] + trim[5] + trim[6] + trim[7]
+		+ trim[8] + trim[9] + trim[10] + trim[11] + trim[12]
+		+ trim[13] + trim[14] + trim[15] + trim[16] + trim[17]
+		+ trim[18] + trim[19] + trim[20] + trim[21] + trim[22]
+		+ trim[23] + trim[24] + trim[25];
+
+    initial begin
+	hiclock <= 1'b0;
+	delay = 3.0;
+    end
+
+    // Fastest operation is 214 MHz = 4.67ns
+    // Delay per trim is 0.02385
+    // Run "hiclock" at 2x this rate, then use positive and negative
+    // edges to derive the 0 and 90 degree phase clocks.
+
+    always #delay begin
+	hiclock <= (hiclock === 1'b0);
+    end
+
+    always @(trim) begin
+    	// Implement trim as a variable delay, one delay per trim bit
+	delay = 1.168 + 0.012 * $itor(bcount);
+    end
+
+    always @(posedge hiclock or posedge reset) begin
+	if (reset == 1'b1) begin
+	    clockp[0] <= 1'b0;
+	end else begin
+	    clockp[0] <= (clockp[0] === 1'b0);
+	end
+    end
+
+    always @(negedge hiclock or posedge reset) begin
+	if (reset == 1'b1) begin
+	    clockp[1] <= 1'b0;
+	end else begin
+	    clockp[1] <= (clockp[1] === 1'b0);
+	end
+    end
+
+`else 			// !FUNCTIONAL;  i.e., gate level netlist below
+
     wire [1:0] clockp;
+    wire [12:0] d;
     wire [1:0] c;
 
     // Main oscillator loop stages
@@ -190,4 +244,7 @@ module ring_osc2x13(reset, trim, clockp);
 	.Y(clockp[1])
     );
 
+`endif // !FUNCTIONAL
+
 endmodule
+`default_nettype wire

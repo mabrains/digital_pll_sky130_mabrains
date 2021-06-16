@@ -9,9 +9,9 @@ Notice 0: Finished LEF file:  /openLANE_flow/designs/digital_pll/runs/first_run/
 Notice 0: 
 Reading DEF file: /openLANE_flow/designs/digital_pll/runs/first_run/tmp/floorplan/4-ioPlacer.def
 Notice 0: Design: digital_pll
-Notice 0:     Created 45 pins.
-Notice 0:     Created 330 components and 2417 component-terminals.
-Notice 0:     Created 345 nets and 1096 connections.
+Notice 0:     Created 37 pins.
+Notice 0:     Created 312 components and 2307 component-terminals.
+Notice 0:     Created 320 nets and 1058 connections.
 Notice 0: Finished DEF file: /openLANE_flow/designs/digital_pll/runs/first_run/tmp/floorplan/4-ioPlacer.def
 Step 1: Cut rows...
 [INFO TAP-0001] Macro blocks found: 0
@@ -20,6 +20,4 @@ Step 1: Cut rows...
 Step 2: Insert endcaps...
 [INFO TAP-0004] #Endcaps inserted: 58
 Step 3: Insert tapcells...
-[WARNING TAP-0010] Tapcell at position (85560, 10880) will cause overlap with endcap. Skipping...
-[WARNING TAP-0010] Tapcell at position (85560, 87040) will cause overlap with endcap. Skipping...
-[INFO TAP-0005] #Tapcells inserted: 91
+[INFO TAP-0005] #Tapcells inserted: 77

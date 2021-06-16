@@ -9,8 +9,8 @@ Notice 0: Finished LEF file:  /openLANE_flow/designs/digital_pll/runs/first_run/
 Notice 0: 
 Reading DEF file: /openLANE_flow/designs/digital_pll/runs/first_run/tmp/placement/8-resizer.def
 Notice 0: Design: digital_pll
-Notice 0:     Created 47 pins.
-Notice 0:     Created 525 components and 3107 component-terminals.
+Notice 0:     Created 39 pins.
+Notice 0:     Created 485 components and 2921 component-terminals.
 Notice 0:     Created 2 special nets and 0 connections.
-Notice 0:     Created 391 nets and 1188 connections.
+Notice 0:     Created 358 nets and 1134 connections.
 Notice 0: Finished DEF file: /openLANE_flow/designs/digital_pll/runs/first_run/tmp/placement/8-resizer.def

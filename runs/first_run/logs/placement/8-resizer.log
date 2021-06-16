@@ -10,10 +10,10 @@ Notice 0: Finished LEF file:  /openLANE_flow/designs/digital_pll/runs/first_run/
 Notice 0: 
 Reading DEF file: /openLANE_flow/designs/digital_pll/runs/first_run/tmp/placement/8-replace.def
 Notice 0: Design: digital_pll
-Notice 0:     Created 47 pins.
-Notice 0:     Created 479 components and 2831 component-terminals.
+Notice 0:     Created 39 pins.
+Notice 0:     Created 447 components and 2693 component-terminals.
 Notice 0:     Created 2 special nets and 0 connections.
-Notice 0:     Created 345 nets and 1096 connections.
+Notice 0:     Created 320 nets and 1058 connections.
 Notice 0: Finished DEF file: /openLANE_flow/designs/digital_pll/runs/first_run/tmp/placement/8-replace.def
 create_clock [get_ports $::env(CLOCK_PORT)]  -name $::env(CLOCK_PORT)  -period $::env(CLOCK_PERIOD)
 [WARNING STA-0337] port 'w' not found.
@@ -40,64 +40,36 @@ set cap_load [expr $::env(SYNTH_CAP_LOAD) / 1000.0]
 puts "\[INFO\]: Setting load to: $cap_load"
 [INFO]: Setting load to: 0.01765
 set_load  $cap_load [all_outputs]
-[INFO RSZ-0027] Inserted 38 input buffers.
-[INFO RSZ-0028] Inserted 7 output buffers.
+[INFO RSZ-0027] Inserted 35 input buffers.
+[INFO RSZ-0028] Inserted 2 output buffers.
 [INFO RSZ-0034] Found 1 slew violations.
 [INFO RSZ-0036] Found 1 capacitance violations.
 [INFO RSZ-0038] Inserted 1 buffers in 1 nets.
-[INFO RSZ-0039] Resized 237 instances.
+[INFO RSZ-0039] Resized 232 instances.
 Design Stats
 --------------------------------
-total instances           525
+total instances           485
 multi row instances         0
-fixed instances           149
-nets                      393
-design area            6386.1 u^2
-fixed area              331.6 u^2
-movable area           3062.9 u^2
-utilization                51 %
-utilization padded         88 %
+fixed instances           135
+nets                      360
+design area            6204.7 u^2
+fixed area              314.1 u^2
+movable area           2896.5 u^2
+utilization                49 %
+utilization padded         49 %
 rows                       29
 row height                2.7 u
 
-[WARNING DPL-0019] detailed placement failed on _325_
-[WARNING DPL-0019] detailed placement failed on _325_
-[WARNING DPL-0019] detailed placement failed on _381_
 Placement Analysis
 --------------------------------
-total displacement     2971.0 u
-average displacement      5.7 u
-max displacement        147.9 u
-original HPWL          6029.9 u
-legalized HPWL         9023.3 u
-delta HPWL                 50 %
+total displacement      886.9 u
+average displacement      1.8 u
+max displacement         12.0 u
+original HPWL          5397.5 u
+legalized HPWL         5905.9 u
+delta HPWL                  9 %
 
-[INFO DPL-0020] Mirrored 161 instances
-[INFO DPL-0021] HPWL before            9023.3 u
-[INFO DPL-0022] HPWL after             8822.9 u
-[INFO DPL-0023] HPWL delta               -2.2 %
-[WARNING DPL-0005] Overlap check failed (24).
- _382_ overlaps _282_
- _388_ overlaps _176_
- idiv8 overlaps _324_
- PHY_65 overlaps PHY_3
- PHY_71 overlaps PHY_7
- PHY_77 overlaps PHY_11
- PHY_83 overlaps PHY_15
- PHY_89 overlaps PHY_19
- PHY_95 overlaps PHY_23
- PHY_101 overlaps PHY_27
- PHY_107 overlaps PHY_31
- PHY_113 overlaps PHY_35
- PHY_119 overlaps PHY_39
- PHY_125 overlaps PHY_43
- PHY_131 overlaps PHY_47
- PHY_137 overlaps PHY_51
- PHY_143 overlaps PHY_55
- input28 overlaps _325_
- input29 overlaps _350_
- input30 overlaps idiv16
- input33 overlaps idiv16
- input34 overlaps _381_
- input35 overlaps _381_
- output43 overlaps input27
+[INFO DPL-0020] Mirrored 128 instances
+[INFO DPL-0021] HPWL before            5905.9 u
+[INFO DPL-0022] HPWL after             5730.4 u
+[INFO DPL-0023] HPWL delta               -3.0 %

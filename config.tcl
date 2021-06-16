@@ -20,10 +20,15 @@ set ::env(SYNTH_SIZING) 0
 set ::env(SYNTH_MAX_FANOUT) 6
 set ::env(FP_CORE_UTIL) 49
 #set ::env(FP_CORE_UTIL) 45
-#set ::env(FP_CORE_UTIL) 30 
+#set ::env(FP_CORE_UTIL) 20 
 #set ::env(FP_CORE_UTIL) 35
 #set ::env(FP_CORE_UTIL) 40
 #set ::env(PL_TARGET_DENSITY) 0.45
+#set ::env(MAGIC_EXT_USE_GDS) 1
+
+#set ::env(VDD_NETS) "VPWR, VPB"  
+#set ::env(GND_NETS) "VGND, VNB"
+
 
 set ::env(PL_TARGET_DENSITY) [ expr ($::env(FP_CORE_UTIL)+5) / 100.0 ]
 set ::env(CLOCK_PERIOD) "25"

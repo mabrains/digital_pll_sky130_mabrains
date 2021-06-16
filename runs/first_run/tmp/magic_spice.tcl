@@ -2,7 +2,7 @@
 if { [info exist ::env(MAGIC_EXT_USE_GDS)] && $::env(MAGIC_EXT_USE_GDS) } {
 	gds read $::env(CURRENT_GDS)
 } else {
-	lef read /home/mariam/openlane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd.tlef
+	lef read /home/mariam/open_pdks/sky130/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd.tlef
 	if {  [info exist ::env(EXTRA_LEFS)] } {
 		set lefs_in $::env(EXTRA_LEFS)
 		foreach lef_file $lefs_in {
@@ -26,6 +26,6 @@ extract
 
 ext2spice lvs
 ext2spice -o /openLANE_flow/designs/digital_pll/runs/first_run/results/magic/digital_pll.spice digital_pll.ext
-feedback save /openLANE_flow/designs/digital_pll/runs/first_run/logs/magic/31-magic_ext2spice.feedback.txt
+feedback save /openLANE_flow/designs/digital_pll/runs/first_run/logs/magic/35-magic_ext2spice.feedback.txt
 # exec cp digital_pll.spice /openLANE_flow/designs/digital_pll/runs/first_run/results/magic/digital_pll.spice
 
