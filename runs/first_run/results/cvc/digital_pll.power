@@ -1,9 +1,0 @@
-VPWR power 1.8
-VGND power 0.0
-#define std_input min@VGND max@VPWR
-dco input std_input
-enable input std_input
-osc input std_input
-resetb input std_input
-div[4:0] input std_input
-ext_trim[25:0] input std_input

@@ -8,7 +8,7 @@ set ::env(VERILOG_FILES) ./designs/digital_pll/src/digital_pll.v
 set ::env(SYNTH_READ_BLACKBOX_LIB) 1
 
 # Fill this
-#set ::env(CLOCK_PERIOD) "100000"
+set ::env(CLOCK_PERIOD) "100000"
 set ::env(CLOCK_PORT) "w"
 set ::env(CLOCK_TREE_SYNTH) 0
 

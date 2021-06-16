@@ -1,6 +1,0 @@
-Using Techfile: /home/mariam/open_pdks/sky130/sky130A/libs.tech/klayout/sky130A.lyt
-Using layout file: /openLANE_flow/designs/digital_pll/runs/first_run/results/floorplan/digital_pll.floorplan.def
-[INFO] Reading tech file: /home/mariam/open_pdks/sky130/sky130A/libs.tech/klayout/sky130A.lyt
-[INFO] Reading Layout file: /openLANE_flow/designs/digital_pll/runs/first_run/results/floorplan/digital_pll.floorplan.def
-[INFO] Writing out PNG screenshot '/openLANE_flow/designs/digital_pll/runs/first_run/results/floorplan/digital_pll.floorplan.def.png'
-Done
