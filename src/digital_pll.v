@@ -36,31 +36,22 @@ module digital_pll(
     input	 enable;	// Enable PLL
     input	 osc;		// Input oscillator to match
     input [4:0]	 div;		// PLL feedback division ratio
-    input 	 dco;		// Run in DCO mode
-    input [25:0] ext_trim;	// External trim for DCO mode
 
     output [1:0] clockp;	// Two 90 degree clock phases
 
-    wire [25:0]  itrim;		// Internally generated trim bits
     wire [25:0]  otrim;		// Trim bits applied to the ring oscillator
-    wire	 creset;	// Controller reset
     wire	 ireset;	// Internal reset (external reset OR disable)
 
     assign ireset = ~resetb | ~enable;
 
-    // In DCO mode: Hold controller in reset and apply external trim value
-
-    assign itrim = (dco == 1'b0) ? otrim : ext_trim;
-    assign creset = (dco == 1'b0) ? ireset : 1'b1;
-
     ring_osc2x13 ringosc (
         .reset(ireset),
-        .trim(itrim),
+        .trim(otrim),
         .clockp(clockp)
     );
 
     digital_pll_controller pll_control (
-        .reset(creset),
+        .reset(ireset),
         .clock(clockp[0]),
         .osc(osc),
         .div(div),
