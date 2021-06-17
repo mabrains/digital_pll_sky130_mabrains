@@ -20,7 +20,7 @@
 `include "digital_pll_controller.v"
 `include "ring_osc2x13.v"
 
-module dpll(
+module digital_pll(
 `ifdef USE_POWER_PINS
     VPWR,
     VGND,

@@ -1,0 +1,34 @@
+digraph "digital_pll" {
+label="digital_pll";
+rankdir="LR";
+remincross=true;
+n4 [ shape=diamond, label="ireset", color="black", fontcolor="black" ];
+n5 [ shape=diamond, label="otrim", color="black", fontcolor="black" ];
+n6 [ shape=octagon, label="clockp", color="black", fontcolor="black" ];
+n7 [ shape=octagon, label="div", color="black", fontcolor="black" ];
+n8 [ shape=octagon, label="osc", color="black", fontcolor="black" ];
+n9 [ shape=octagon, label="enable", color="black", fontcolor="black" ];
+n10 [ shape=octagon, label="resetb", color="black", fontcolor="black" ];
+c14 [ shape=record, label="{{<p11> clock|<p7> div|<p8> osc|<p12> reset}|pll_control\ndigital_pll_controller|{<p13> trim}}" ];
+x0 [ shape=record, style=rounded, label="<s0> 0:0 - 0:0 " ];
+x0:e -> c14:p11:w [arrowhead=odiamond, arrowtail=odiamond, dir=both, color="black", label=""];
+c15 [ shape=record, label="{{<p12> reset|<p13> trim}|ringosc\nring_osc2x13|{<p6> clockp}}" ];
+c19 [ shape=record, label="{{<p16> A|<p17> B}|$68\n$or|{<p18> Y}}" ];
+c20 [ shape=record, label="{{<p16> A}|$67\n$not|{<p18> Y}}" ];
+c21 [ shape=record, label="{{<p16> A}|$66\n$not|{<p18> Y}}" ];
+x1 [shape=box, style=rounded, label="BUF"];
+c19:p18:e -> x1:w:w [color="black", label=""];
+n10:e -> c21:p16:w [color="black", label=""];
+c20:p18:e -> c19:p17:w [color="black", label=""];
+c21:p18:e -> c19:p16:w [color="black", label=""];
+x1:e:e -> n4:w [color="black", label=""];
+n4:e -> c14:p12:w [color="black", label=""];
+n4:e -> c15:p12:w [color="black", label=""];
+c14:p13:e -> n5:w [color="black", style="setlinewidth(3)", label=""];
+n5:e -> c15:p13:w [color="black", style="setlinewidth(3)", label=""];
+c15:p6:e -> n6:w [color="black", style="setlinewidth(3)", label=""];
+n6:e -> x0:s0:w [color="black", style="setlinewidth(3)", label=""];
+n7:e -> c14:p7:w [color="black", style="setlinewidth(3)", label=""];
+n8:e -> c14:p8:w [color="black", label=""];
+n9:e -> c20:p16:w [color="black", label=""];
+}
