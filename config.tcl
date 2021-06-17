@@ -9,7 +9,7 @@ set ::env(SYNTH_READ_BLACKBOX_LIB) 1
 
 # Fill this
 set ::env(CLOCK_PERIOD) "100000"
-set ::env(CLOCK_PORT) "w"
+set ::env(CLOCK_PORT) "osc"
 set ::env(CLOCK_TREE_SYNTH) 0
 
 set ::env(RUN_SIMPLE_CTS) 0
@@ -26,8 +26,8 @@ set ::env(FP_CORE_UTIL) 49
 #set ::env(PL_TARGET_DENSITY) 0.45
 #set ::env(MAGIC_EXT_USE_GDS) 1
 
-#set ::env(VDD_NETS) "VPWR, VPB"  
-#set ::env(GND_NETS) "VGND, VNB"
+set ::env(VDD_NETS) [list {VPWR}]
+set ::env(GND_NETS) [list {VGND}]
 
 
 set ::env(PL_TARGET_DENSITY) [ expr ($::env(FP_CORE_UTIL)+5) / 100.0 ]
@@ -39,5 +39,6 @@ set ::env(GLB_RT_OVERFLOW_ITERS) 55
 
 set filename $::env(DESIGN_DIR)/$::env(PDK)_$::env(STD_CELL_LIBRARY)_config.tcl
 if { [file exists $filename] == 1} {
+	puts $filename
 	source $filename
 }
